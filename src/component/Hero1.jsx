@@ -4,9 +4,10 @@ import Group from "../images/Group.svg";
 export default function Hero1() {
   return (
     <>
-      <div className="w-full h-full flex bg-white justify-center items-center">
-        <div className="container">
-          <div className="bg-white h-full w-full ">
+      {/* نفس عرض الهيدر بالظبط */}
+      <div className="w-full bg-white">
+        <div className="mx-auto px-4 md:px-8 lg:px-16">
+          <div className="bg-white h-full w-full">
             <section className="left bg-white w-[609px] h-[745px]">
               <div className="pt-10">
                 <h1 className="text-[60px] leading-tight text-black">
@@ -28,10 +29,10 @@ export default function Hero1() {
                     Sign In
                   </button>
                 </div>
+
                 <div className="mt-25">
                   <img src={Group} alt="" />
                 </div>
-                
               </div>
             </section>
           </div>
