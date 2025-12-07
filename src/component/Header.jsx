@@ -7,25 +7,25 @@ export default function Header() {
 
   return (
     <header className="w-full bg-white ">
-      <div className="mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-[120px]">
+      <div className="mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-[143px]">
         <div className="flex items-center gap-3">
           <img src={Capa} alt="logo" className="w-[161.84px] h-[45px]" />
         </div>
 
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="#" className="px-4 py-2 bg-emerald-700 text-white rounded-full">Home</a>
-          <a href="" className="text-black hover:text-emerald-700">Menu</a>
-          <a href="#" className="text-black hover:text-emerald-700">Contact Us</a>
-          <a href="#" className="text-black hover:text-emerald-700">About Us</a>
-          <a href="#" className="text-black hover:text-emerald-700">Blog</a>
+        <nav className="hidden md:flex w-[536px] h-[45px] justify-center items-center gap-8">
+          <a href="#" className="px-4 py-2 flex justify-center text-[20px] items-center bg-emerald-700 text-white w-[110px] rounded-full">Home</a>
+          <a href="" className="text-black  text-[20px] hover:text-emerald-700">Menu</a>
+          <a href="#" className="text-black text-[20px] hover:text-emerald-700">Contact Us</a>
+          <a href="#" className="text-black text-[20px] hover:text-emerald-700">About Us</a>
+          <a href="#" className="text-black text-[20px] hover:text-emerald-700">Blog</a>
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
-          <div className="w-10 h-10 flex items-center justify-center rounded-full bg-emerald-700 text-white cursor-pointer">
-            <FiSearch size={20} />
+        <div className="hidden md:flex items-center w-[110px] h-[45px] gap-4">
+          <div className="w-[45px] h-[45px] flex items-center justify-center rounded-full bg-emerald-700  text-white cursor-pointer">
+            <FiSearch size={24} />
           </div>
-          <div className="w-10 h-10 flex items-center justify-center rounded-full bg-emerald-700 text-white cursor-pointer">
-            <FiShoppingBag size={20} />
+          <div className="w-[45px] h-[45px] flex items-center justify-center rounded-full bg-emerald-700 text-white cursor-pointer">
+            <FiShoppingBag size={24} />
           </div>
         </div>
 

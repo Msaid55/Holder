@@ -5,7 +5,7 @@ import Hero1 from "./component/Hero1";
 export default function App() {
   return (
     <div className="bg-white">
-      {/* نفس الكونتينر للهيدر والهيرو */}
+
       <div className="max-w-8xl mx-auto px-8">
         <Header />
         <Hero1 />
