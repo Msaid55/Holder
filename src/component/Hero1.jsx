@@ -22,12 +22,12 @@ export default function Hero1() {
   return (
     <>
       <div className="w-full bg-white">
-        {/* الكونتينر الرئيسي */}
+
         <div className="mx-auto px-4 md:px-8 lg:px-16 py-10
                         flex flex-col md:flex-row items-center md:items-start 
                         justify-between gap-10">
           
-          {/* LEFT – الكلام */}
+
           <section className="w-full md:w-[609px] md:h-[513px]">
             <div className="w-full h-full">
               <h1
@@ -76,7 +76,7 @@ export default function Hero1() {
             </div>
           </section>
 
-          {/* RIGHT – الطبق – في الموبايل يبقى تحت وفي النص */}
+
           <div className="w-full flex justify-center md:justify-end">
             <Hero2 />
           </div>
