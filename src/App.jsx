@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./component/Header";
-import Hero1 from "./component/Hero1";
+import Home from "./component/Home";
 
 export default function App() {
   return (
@@ -8,7 +8,7 @@ export default function App() {
 
       <div className="max-w-8xl mx-auto px-8">
         <Header />
-        <Hero1 />
+        <Home />
       </div>
     </div>
   );
