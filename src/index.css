@@ -18,15 +18,67 @@
 
 @keyframes dish-enter {
   0% {
-    transform: translateX(200px);
+    transform: translateY(200px);
     opacity: 0;
   }
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
 
 .animate-dish-enter {
-  animation: dish-enter 1s ease-out forwards;
+  animation: dish-enter 0.9s ease-out forwards;
 }
+
+@keyframes float-up-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); /* تطلع لفوق شوية */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.float-card-1 {
+  animation: float-up-down 3s ease-in-out infinite;
+}
+
+.float-card-2 {
+  animation: float-up-down 3.2s ease-in-out infinite;
+}
+
+.float-card-3 {
+  animation: float-up-down 3.4s ease-in-out infinite;
+}
+
+.float-card-4 {
+  animation: float-up-down 3.6s ease-in-out infinite;
+}
+.float-card-2 {
+  animation: float-up-down 3.2s ease-in-out infinite;
+  animation-delay: .3s;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.slide-left {
+  animation: slide-left .8s ease-out forwards;
+}
+
+
