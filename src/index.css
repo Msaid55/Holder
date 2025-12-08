@@ -81,4 +81,20 @@
   animation: slide-left .8s ease-out forwards;
 }
 
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-up {
+  animation: floatUp 0.7s ease forwards;
+}
+
+
 

@@ -1,3 +1,4 @@
+import Boxs from "./Boxs";
 import Flfl from "./Flfl";
 import Hero1 from "./Hero1";
 
@@ -8,6 +9,7 @@ export default function
     <div>
         <Hero1/>
         <Flfl/>
+        <Boxs/>
     </div>
   )
 }
