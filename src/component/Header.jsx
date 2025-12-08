@@ -25,7 +25,7 @@ export default function Header() {
   return (
     <header className="w-full bg-white">
       {/* TOP BAR */}
-      <div className="container mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-[120px]">
+      <div className="mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-[120px]">
         <div className="flex items-center gap-3">
           <img src={Capa} alt="logo" className="w-[161.84px] h-[45px]" />
         </div>

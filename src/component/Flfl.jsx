@@ -7,7 +7,7 @@ export default function Flfl() {
                 <img src={Group} alt="" />
             </div>
             <div className='w-[253px] h-[203px] relative'>
-                <img src={Redchilli} alt="" className='absolute -right-24 hidden md:block'/>
+                <img src={Redchilli} alt="" className='absolute -right-16 hidden md:block'/>
             </div>
         </div>
     )
