@@ -1,0 +1,199 @@
+.popular-wrapper {
+    background-color: #ffffff;
+    padding: 4rem 0;
+  }
+  
+  /* العنوان + الدوتس */
+  .popular-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  
+  
+  /* الجريد */
+  .popular-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  
+  @media (max-width: 992px) {
+    .popular-header {
+      flex-direction: column;
+      gap: 16px;
+    }
+  
+    .popular-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .popular-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .popular-header {
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
+  /* --------- الكارد --------- */
+  
+  .pro-card {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 32px 24px 26px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.05);
+    overflow: visible;
+  }
+  
+  /* الباكجراوند الفاتحة جوّه الكارد */
+  .pro-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 90px; /* من بعد الصورة */
+    background-color: #f2faf7;
+    border-radius: 24px;
+    z-index: 0;
+  }
+  
+  /* الصورة */
+  .card-image-wrap {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .product-img {
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+    margin-top: -40px;
+    transition: 0.3s ease;
+  }
+  
+  .pro-card:hover .product-img {
+    transform: translateY(-10px);
+  }
+  
+  /* الجسم الداخلي */
+  .card-body-2 {
+    position: relative;
+    z-index: 3;
+    margin-top: 16px;
+  }
+  
+  /* الاسم + السعر + الريتنج */
+  .title-price-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 6px;
+  }
+  
+  .rating-row {
+    display: flex;
+    gap: 2px;
+  }
+  
+  .star {
+    color: #ffb400;
+    font-size: 14px;
+  }
+  
+  .price-text {
+    font-size: 18px;
+    font-weight: 800;
+    color: #111111;
+  }
+  
+  /* Order Now + الدايرة */
+  .order-row {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .order-btn {
+    padding: 10px 32px;
+    border-radius: 9999px;
+    background-color: #007a59;
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .order-btn:hover {
+    background-color: #036149;
+  }
+  
+  .icon-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+    border: 2px solid #ff4b4b;
+    color: #ff4b4b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .icon-circle:hover {
+    background: #ff4b4b;
+    color: #ffffff;
+  }
+  
+  /* الأسهم تحت */
+  .arrows-row {
+    margin-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+  
+  .arrow-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 9999px;
+    border: 1px solid #d0d0d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777777;
+    background: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .arrow-btn:hover {
+    border-color: #007a59;
+    color: #007a59;
+  }
+  
+  .arrow-active {
+    background: #007a59;
+    border-color: #007a59;
+    color: #ffffff;
+  }
