@@ -2,6 +2,7 @@ import About from "./About";
 import Boxs from "./Boxs";
 import Flfl from "./Flfl";
 import Hero1 from "./Hero1";
+import Popular from "./Popular";
 
 
 export default function 
@@ -12,6 +13,7 @@ export default function
         <Flfl/>
         <Boxs/>
         <About/>
+        <Popular/>
     </div>
   )
 }
