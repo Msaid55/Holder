@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React from "react";
 import { FiShoppingBag } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 import itms30 from "../images/itms30.svg";
 import Itms31 from "../images/Itms31.svg";
@@ -7,58 +8,21 @@ import Eitms33 from "../images/Eitms33.svg";
 import Kiwifruit34 from "../images/Kiwifruit34.svg";
 
 export default function Allitems() {
-
   const items = [
-    {
-      title: "Caesar Salad",
-      price: "$25",
-      img: itms30,
-    },
-    {
-      title: "Blueberry Ice Cream",
-      price: "$10",
-      img: Itms31,
-    },
-    {
-      title: "Cobb Salad",
-      price: "$20",
-      img: Eitms33,
-    },
-    {
-      title: "Virgin Mojito",
-      price: "$15",
-      img: Kiwifruit34,
-    },
-    {
-      title: "Caesar Salad",
-      price: "$25",
-      img: itms30,
-    },
-    {
-      title: "Blueberry Ice Cream",
-      price: "$10",
-      img: Itms31,
-    },
-    {
-      title: "Cobb Salad",
-      price: "$20",
-      img: Eitms33,
-    },
-    {
-      title: "Virgin Mojito",
-      price: "$15",
-      img: Kiwifruit34,
-    },
+    { title: "Caesar Salad", price: "$25", img: itms30 },
+    { title: "Blueberry Ice Cream", price: "$10", img: Itms31 },
+    { title: "Cobb Salad", price: "$20", img: Eitms33 },
+    { title: "Virgin Mojito", price: "$15", img: Kiwifruit34 },
+    { title: "Caesar Salad", price: "$25", img: itms30 },
+    { title: "Blueberry Ice Cream", price: "$10", img: Itms31 },
+    { title: "Cobb Salad", price: "$20", img: Eitms33 },
+    { title: "Virgin Mojito", price: "$15", img: Kiwifruit34 },
   ];
-
-  // ⭐ الجديد
-  const [visibleCount, setVisibleCount] = useState(8);
 
   return (
     <div>
       <div className="w-full">
-        <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-10">
-
+        <div className="">
           {/* الكروت */}
           <div
             className="
@@ -72,7 +36,7 @@ export default function Allitems() {
               mt-10
             "
           >
-            {items.slice(0, visibleCount).map((item, index) => (
+            {items.map((item, index) => (
               <div
                 key={index}
                 className="
@@ -152,26 +116,28 @@ export default function Allitems() {
             ))}
           </div>
 
-          {/* ⭐ See More Button */}
-          {visibleCount < items.length && (
-            <div className="flex justify-center">
-              <button
-                onClick={() => setVisibleCount(prev => prev + 4)}
-                className="
-                  px-12 py-3 rounded-full 
-                  bg-[#FF4033] text-white 
-                  text-[16px] font-semibold 
-                  transition duration-200
-                  hover:bg-[#e6392d]
-                "
-              >
-                See More
-              </button>
-            </div>
-          )}
+          {/* ✅ See More Link (دايمًا ظاهر - من غير شرط ولا لوجيك) */}
+          {/* ⭐ See More Button (LINK) */}
+<div className="flex justify-center mt-10">
+  <a
+    href="/all-items"
+    className="
+      px-12 py-3 rounded-full 
+      bg-[#FF4033] text-white 
+      text-[16px] font-semibold 
+      transition duration-200
+      hover:bg-[#e6392d]
+      w-[168px] h-[56px]
+      flex items-center justify-center
+    "
+  >
+    See More
+  </a>
+</div>
+
 
         </div>
       </div>
     </div>
-  )
+  );
 }
