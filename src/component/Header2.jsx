@@ -13,10 +13,10 @@ export default function Header2() {
       {/* ⭐⭐ Desktop Version ⭐⭐ */}
       <div className="hidden md:flex flex-col items-center">
         {/* الخط الأحمر */}
-        <div className="w-[1200px] h-[12px] bg-[#FF4033] rounded-full"></div>
+        <div className="w-[1380px] h-[12px] bg-[#FF4033] rounded-full"></div>
 
         {/* التابات فوق الخط */}
-        <div className="w-[816px] h-[50px] flex gap-10 -mt-2.5">
+        <div className="w-[816px] h-[50px] flex gap-15 justify-center -mt-2.5">
           {tabs.map((tab) => (
             <button
               key={tab}

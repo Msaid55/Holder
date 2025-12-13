@@ -6,7 +6,7 @@ import Allitems from "./Allitems";
 export default function HeadItem() {
  
   return (
-    <div className="w-full h-[1300px] bg-white">
+    <div className="w-full h-auto bg-white">
       <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-10">
         {/* العنوان + الدكورات + النقاط على اليمين */}
         <div className="flex justify-center">

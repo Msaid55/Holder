@@ -1,7 +1,6 @@
-import React from "react";
-import "./PopularItems.css";
-import {FiShoppingBag} from "react-icons/fi";
 
+import {FiShoppingBag} from "react-icons/fi";
+import { useState } from 'react'
 
 import Group48 from "../images/Group48.svg";
 import itms30 from "../images/itms30.svg";
@@ -32,6 +31,8 @@ export default function PopularItems() {
       img: Kiwifruit34,
     },
   ];
+       
+const [visibleCount, setVisibleCount] = useState(4);
 
   return (
     <div className="popular-wrapper w-full">
@@ -47,41 +48,98 @@ export default function PopularItems() {
         </div>
 
         {/* الكروت */}
-        <div className="popular-grid">
-          {items.map((item, index) => (
-            <div className="pro-card w-[285px] h-[417px]" key={index}>
-              <div className="card-image-wrap">
-                <img src={item.img} alt={item.title} className="product-img" />
-              </div>
+         <div
+            className="
+              grid 
+              grid-cols-1 
+              sm:grid-cols-2 
+              md:grid-cols-2 
+              lg:grid-cols-3 
+              xl:grid-cols-4 
+              gap-6 
+              mt-10
+            "
+          >
+            {items.slice(0, visibleCount).map((item, index) => (
+              <div
+                key={index}
+                className="
+                  relative bg-white rounded-3xl px-6 pt-8 pb-6 
+                  shadow-[0_14px_40px_rgba(0,0,0,0.05)] 
+                  overflow-visible group
+                "
+              >
+                {/* الخلفية الفاتحة */}
+                <div
+                  className="
+                    absolute bottom-0 left-0 w-full h-[75%] 
+                    bg-[#e9f4f2] rounded-xl 
+                    origin-bottom scale-y-0 
+                    transition-all duration-300 ease-in-out 
+                    group-hover:scale-y-100
+                  "
+                ></div>
 
-              <div className="card-body-2">
-                <div className="title-price-row w-[237px] h-[45px] flex items-center justify-between">
-                    <h3 className="card-title text-[20px]">{item.title}</h3>
-                    <div className="price-text">{item.price}</div>
+                {/* الصورة */}
+                <div className="relative z-20 flex justify-center">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="
+                      w-[212px] h-[213px] object-contain mt-[-40px]
+                      transition-all duration-300
+                      group-hover:-translate-y-2
+                    "
+                  />
                 </div>
-                <div className="rating-row">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <span key={i} className="star">
-                          ★
-                        </span>
-                      ))}
+
+                {/* جسم الكارد */}
+                <div className="relative z-30 mt-14">
+                  <div className="flex items-center justify-between w-[230px] h-[45px]">
+                    <h3 className="text-[20px] font-bold text-[#111]">
+                      {item.title}
+                    </h3>
+                    <div className="text-[18px] font-extrabold text-[#111]">
+                      {item.price}
+                    </div>
                   </div>
 
-                <div className="order-row">
-                  <button className="order-btn">Order Now</button>
-                  <button className="icon-circle">
-                    <div className="w-10 h-10 flex items-center justify-center rounded-full text-[#FF4033] cursor-pointer">
-                                <FiShoppingBag size={24} />
-                              </div>
-                    {/* لو عايزها شوبنج باج بدل اللّوك:
-                        <i className="fa-solid fa-bag-shopping"></i>
-                    */}
-                  </button>
+                  <div className="flex gap-1 mt-1">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <span key={i} className="text-[#ffb400] text-[14px]">
+                        ★
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center justify-between mt-5">
+                    <button
+                      className="
+                        px-8 py-2.5 rounded-full bg-[#007a59] text-white 
+                        text-[16px] font-semibold transition duration-200 
+                        hover:bg-[#036149]
+                      "
+                    >
+                      Order Now
+                    </button>
+
+                    <button
+                      className="
+                        w-[45px] h-[45px] rounded-full border border-[#FF4033] 
+                        text-[#FF4033] flex items-center justify-center 
+                        transition-all duration-200 cursor-pointer
+                      "
+                    >
+                      <div className="w-10 h-10 flex items-center justify-center rounded-full text-[#FF4033]">
+                        <FiShoppingBag size={24} />
+                      </div>
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+
       </div>
     </div>
   );
