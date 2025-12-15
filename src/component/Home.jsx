@@ -3,6 +3,7 @@ import Boxs from "./Boxs";
 import Flfl from "./Flfl";
 import HeadItem from "./HeadItem";
 import Hero1 from "./Hero1";
+import Ourchafe from "./Ourchafe";
 import Popular from "./Popular";
 
 
@@ -16,6 +17,7 @@ export default function
         <About/>
         <Popular/>
         <HeadItem/>
+        <Ourchafe/>
     </div>
   )
 }
