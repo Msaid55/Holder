@@ -1,6 +1,6 @@
-import React from "react";
+
 import { FiShoppingBag } from "react-icons/fi";
-import { Link } from "react-router-dom";
+
 
 import itms30 from "../images/itms30.svg";
 import Itms31 from "../images/Itms31.svg";
