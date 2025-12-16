@@ -32,7 +32,7 @@ export default function Ourchafe() {
   return (
     <section className="w-full bg-white mt-12 h-auto">
       {/* ✅ نفس الكونتينر بالظبط */}
-      <div className="max-w-[1415px] mx-auto px-4 ">
+      <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-16">
 
         {/* العنوان */}
         <div className="flex justify-center mb-12">
@@ -45,13 +45,13 @@ export default function Ourchafe() {
         </div>
 
         {/* الكروت - Flex */}
-        <div className="w-full flex justify-between gap-10 flex-wrap">
+        <div className="flex justify-between flex-wrap">
 
           {chefs.map((chef, index) => (
             <div key={index} className="relative group transition-all duration-500">
               
               {/* عرض كارد مناسب لعرض 1415px */}
-              <div className="w-full md:w-[420px] flex-shrink-0 flex items-end h-[360px]">
+              <div className="md:w-[387px] flex-shrink-0 flex items-end h-[360px]">
 
                 {/* صورة الشيف */}
                 <div
