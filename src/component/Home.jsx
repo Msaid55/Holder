@@ -1,4 +1,5 @@
 import About from "./About";
+import Blog from "./Blog";
 import Boxs from "./Boxs";
 import Flfl from "./Flfl";
 import HeadItem from "./HeadItem";
@@ -18,6 +19,7 @@ export default function
         <Popular/>
         <HeadItem/>
         <Ourchafe/>
+        <Blog/>
     </div>
   )
 }
