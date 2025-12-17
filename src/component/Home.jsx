@@ -1,4 +1,5 @@
 import About from "./About";
+import Android from "./Android";
 import Blog from "./Blog";
 import Boxs from "./Boxs";
 import Flfl from "./Flfl";
@@ -20,6 +21,7 @@ export default function
         <HeadItem/>
         <Ourchafe/>
         <Blog/>
+        <Android/>
     </div>
   )
 }
