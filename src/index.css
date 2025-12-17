@@ -1,5 +1,14 @@
 @plugin "daisyui";
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+}
+
+
 
 @keyframes slide-up {
   0% {
@@ -95,6 +104,4 @@
 .animate-up {
   animation: floatUp 0.7s ease forwards;
 }
-
-
 

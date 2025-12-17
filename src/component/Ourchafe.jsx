@@ -45,7 +45,7 @@ export default function Ourchafe() {
         </div>
 
         {/* الكروت - Flex */}
-        <div className="flex justify-between flex-wrap">
+        <div className="flex justify-between gap-5 flex-wrap">
 
           {chefs.map((chef, index) => (
             <div key={index} className="relative group transition-all duration-500">
