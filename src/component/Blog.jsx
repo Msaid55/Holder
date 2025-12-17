@@ -48,7 +48,7 @@ export default function Blog() {
                 </div>
 
                 {/* الكاردات */}
-                <div className="flex flex-wrap justify-between">
+                <div className="flex flex-wrap gap-5 justify-between">
                     {blogs.map((blog, index) => (
                          <div
                             key={index}
