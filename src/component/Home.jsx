@@ -7,6 +7,7 @@ import HeadItem from "./HeadItem";
 import Hero1 from "./Hero1";
 import Ourchafe from "./Ourchafe";
 import Popular from "./Popular";
+import Customer from "./Customer";
 
 
 export default function 
@@ -20,8 +21,10 @@ export default function
         <Popular/>
         <HeadItem/>
         <Ourchafe/>
+        <Customer/>
         <Blog/>
         <Android/>
+        
     </div>
   )
 }
