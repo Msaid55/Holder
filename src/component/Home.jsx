@@ -8,6 +8,7 @@ import Hero1 from "./Hero1";
 import Ourchafe from "./Ourchafe";
 import Popular from "./Popular";
 import Customer from "./Customer";
+import FAQ from "./FAQ";
 
 
 export default function 
@@ -24,6 +25,7 @@ export default function
         <Customer/>
         <Blog/>
         <Android/>
+        <FAQ/>
         
     </div>
   )
