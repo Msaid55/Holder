@@ -9,6 +9,7 @@ import Ourchafe from "./Ourchafe";
 import Popular from "./Popular";
 import Customer from "./Customer";
 import FAQ from "./FAQ";
+import Footer from "./Footer";
 
 
 export default function 
@@ -26,6 +27,7 @@ export default function
         <Blog/>
         <Android/>
         <FAQ/>
+        <Footer/>
         
     </div>
   )
