@@ -1,16 +1,18 @@
 import React from "react";
-
-// غيري الصورة واللوجو من عندك
+import { LuYoutube } from "react-icons/lu";
+import { FiFacebook } from "react-icons/fi";
 import Rectangle85 from "../images/Rectangle85.png";
 import Capa from "../assets/Capa.svg";
-
+import { TfiTwitter } from "react-icons/tfi";
+import { FaWhatsapp } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="w-full pt-20">
-      <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16 relative">
+      <div className="max-w-8xl mx-auto hpx-4 md:px-8 lg:px-16 relative">
 
         {/* البوكس الكبير */}
-        <div className="relative rounded-3xl overflow-hidden">
+        <div className="relative mb-5 rounded-3xl overflow-hidden">
 
           {/* الخلفية */}
           <div
@@ -23,11 +25,11 @@ export default function Footer() {
 
             {/* النص */}
             <div className="text-white flex flex-col justify-center">
-              <h2 className="text-[28px] md:text-[34px] font-bold leading-tight mb-4">
+              <h2 className="text-[25px] md:text-[40px] font-bold leading-tight mb-4">
                 Bringing People Together <br /> Over Great Food
               </h2>
 
-              <p className="text-sm text-white/80 leading-6 max-w-md">
+              <p className="text-[12px] md:text-[17px] text-white/80 leading-6 max-w-md">
                 A cozy and welcoming restaurant offering freshly prepared meals,
                 friendly service, and a relaxing atmosphere for all food lovers.
                 Experience elegant dining with gourmet dishes crafted by expert chefs
@@ -36,12 +38,12 @@ export default function Footer() {
             </div>
 
             {/* الفورم */}
-            <div className="rounded-2xl p-6 md:p-8 shadow-xl bg-white">
+            <div className="rounded-2xl z-40 p-6 md:p-8 shadow-xl ">
               <form className="flex flex-col gap-4">
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm font-medium text-black">First Name*</label>
+                    <label className="text-sm font-medium text-black md:text-white">First Name*</label>
                     <input
                       type="text"
                       className="w-full mt-1 border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600"
@@ -59,7 +61,7 @@ export default function Footer() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm font-medium text-black">Email*</label>
+                    <label className="text-sm font-medium text-black md:text-white">Email*</label>
                     <input
                       type="email"
                       className="w-full mt-1 border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600"
@@ -76,7 +78,7 @@ export default function Footer() {
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-black">Subject</label>
+                  <label className="text-sm font-medium text-black md:text-white">Subject</label>
                   <input
                     type="text"
                     className="w-full mt-1 border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600"
@@ -84,7 +86,7 @@ export default function Footer() {
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-black">Message*</label>
+                  <label className="text-sm font-medium text-black md:text-white">Message*</label>
                   <textarea
                     rows="4"
                     className="w-full mt-1 border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600 resize-none"
@@ -105,7 +107,7 @@ export default function Footer() {
         </div>
 
         {/* الجزء السفلي */}
-        <div className="flex flex-col md:flex-row items-center justify-between mt-10 gap-4">
+        <div className="flex flex-col pb-5 md:flex-row items-center justify-between gap-4">
 
           {/* اللوجو */}
           <div className="flex items-center gap-2">
@@ -114,15 +116,16 @@ export default function Footer() {
 
           {/* الحقوق */}
           <p className="text-sm text-black">
-            © 2020 Lift Media. All rights reserved.
+            © 202 Lift Media. All rights reserved.
           </p>
 
           {/* السوشيال */}
           <div className="flex gap-3">
-            <span className="w-9 h-9 flex items-center justify-center rounded-full bg-white shadow-lg cursor-pointer hover:bg-gray-200">▶</span>
-            <span className="w-9 h-9 flex items-center justify-center rounded-full bg-white shadow-lg cursor-pointer hover:bg-gray-200">f</span>
-            <span className="w-9 h-9 flex items-center justify-center rounded-full bg-white shadow-lg cursor-pointer hover:bg-gray-200">🐦</span>
-            <span className="w-9 h-9 flex items-center justify-center rounded-full bg-white shadow-lg cursor-pointer hover:bg-gray-200">📷</span>
+            <span className="w-9 h-9 flex items-center justify-center rounded-full bg-white shadow-lg cursor-pointer hover:bg-gray-200"><FiFacebook className="text-[#ff4033]" /></span>
+            <span className="w-9 h-9 flex items-center justify-center rounded-full bg-white shadow-lg cursor-pointer hover:bg-gray-200"><LuYoutube  className="text-[#ff4033]"/></span>
+            <span className="w-9 h-9 flex items-center justify-center rounded-full bg-white shadow-lg cursor-pointer hover:bg-gray-200"><TfiTwitter className="text-[#ff4033]" /></span>
+            <span className="w-9 h-9 flex items-center justify-center rounded-full bg-white shadow-lg cursor-pointer hover:bg-gray-200"><FaWhatsapp className="text-[#ff4033]" /></span>
+            <span className="w-9 h-9 flex items-center justify-center rounded-full bg-white shadow-lg cursor-pointer hover:bg-gray-200"><FaInstagram className="text-[#ff4033]" /></span>
           </div>
 
         </div>
