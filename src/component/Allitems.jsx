@@ -1,6 +1,4 @@
-
 import { FiShoppingBag } from "react-icons/fi";
-
 
 import Meat1 from "../images/Meat1.svg";
 import Meal2 from "../images/Meal2.svg";
@@ -10,17 +8,69 @@ import Meal5 from "../images/Meal5.svg";
 import Meal6 from "../images/Meal6.svg";
 import Meal7 from "../images/Meal7.svg";
 
-export default function Allitems() {
+export default function Allitems({ activeTab = "Break Fast" }) {
   const items = [
-    { title: "Croissant", price: "$55", img: Meat1 },
-    { title: "Muffin", price: "$30", img: Meal2 },
-    { title: "Waffles", price: "$45", img: Meal3 },
-    { title: "Bacon", price: "$25", img: Meal4 },
-    { title: "Caesar Salad", price: "$25", img: Meal5 },
-    { title: "Oatmeal", price: "$60", img: Meal6 },
-    { title: "Cobb Salad", price: "$20", img: Meal7 },
-    { title: "Coleslaw", price: "$35", img: Meat1 },
+    // Break Fast (8)
+    { title: "Croissant", price: "$55", img: Meat1, category: "Break Fast" },
+    { title: "Muffin", price: "$30", img: Meal2, category: "Break Fast" },
+    { title: "Waffles", price: "$45", img: Meal3, category: "Break Fast" },
+    { title: "Bacon", price: "$25", img: Meal4, category: "Break Fast" },
+    { title: "Oatmeal", price: "$60", img: Meal6, category: "Break Fast" },
+    { title: "Coleslaw", price: "$35", img: Meat1, category: "Break Fast" },
+    { title: "Toast", price: "$18", img: Meal2, category: "Break Fast" },
+    { title: "Pancakes", price: "$40", img: Meal3, category: "Break Fast" },
+
+    // Lunch (مثال)
+    { title: "Caesar Salad", price: "$25", img: Meal5, category: "Lunch" },
+    { title: "Cobb Salad", price: "$20", img: Meal7, category: "Lunch" },
+    { title: "Waffles", price: "$45", img: Meal3, category: "Lunch" },
+    { title: "Bacon", price: "$25", img: Meal4, category: "Lunch" },
+    { title: "Oatmeal", price: "$60", img: Meal6, category: "Lunch" },
+    { title: "Coleslaw", price: "$35", img: Meat1, category: "Lunch" },
+    { title: "Toast", price: "$18", img: Meal2, category: "Lunch" },
+    { title: "Pancakes", price: "$40", img: Meal3, category: "Lunch" },
+
+    // Dinner (مثال)
+    { title: "Steak Plate", price: "$75", img: Meat1, category: "Dinner" },
+    { title: "Grilled Chicken", price: "$50", img: Meal4, category: "Dinner" },
+    { title: "Waffles", price: "$45", img: Meal3, category: "Dinner" },
+    { title: "Bacon", price: "$25", img: Meal4, category: "Dinner" },
+    { title: "Oatmeal", price: "$60", img: Meal6, category: "Dinner" },
+    { title: "Coleslaw", price: "$35", img: Meat1, category: "Dinner" },
+    { title: "Toast", price: "$18", img: Meal2, category: "Dinner" },
+    { title: "Pancakes", price: "$40", img: Meal3, category: "Dinner" },
+
+    // Pizza (مثال)
+    { title: "Margherita", price: "$45", img: Meal3, category: "Pizza" },
+    { title: "Pepperoni", price: "$55", img: Meal3, category: "Pizza" },
+    { title: "Waffles", price: "$45", img: Meal3, category: "Pizza" },
+    { title: "Bacon", price: "$25", img: Meal4, category: "Pizza" },
+    { title: "Oatmeal", price: "$60", img: Meal6, category: "Pizza" },
+    { title: "Coleslaw", price: "$35", img: Meat1, category: "Pizza" },
+    { title: "Toast", price: "$18", img: Meal2, category: "Pizza" },
+    { title: "Pancakes", price: "$40", img: Meal3, category: "Pizza" },
+
+    // Burger (مثال)
+    { title: "Classic Burger", price: "$35", img: Meal4, category: "Burger" },
+    { title: "Cheese Burger", price: "$40", img: Meal4, category: "Burger" },
+    { title: "Waffles", price: "$45", img: Meal3, category: "Burger" },
+    { title: "Bacon", price: "$25", img: Meal4, category: "Burger" },
+    { title: "Oatmeal", price: "$60", img: Meal6, category: "Burger" },
+    { title: "Coleslaw", price: "$35", img: Meat1, category: "Burger" },
+    { title: "Toast", price: "$18", img: Meal2, category: "Burger" },
+    { title: "Pancakes", price: "$40", img: Meal3, category: "Burger" },
+
+    // Drinks (مثال)
+    { title: "Virgin Mojito", price: "$15", img: Meal7, category: "Drinks" },
+    { title: "Lemon Juice", price: "$12", img: Meal6, category: "Drinks" },
+
+    // Desert (مثال)
+    { title: "Ice Cream", price: "$10", img: Meal2, category: "Desert" },
+    { title: "Chocolate Cake", price: "$20", img: Meal5, category: "Desert" },
   ];
+
+  // ✅ الفلترة حسب التاب
+  const filteredItems = items.filter((item) => item.category === activeTab).slice(0, 8);
 
   return (
     <div>
@@ -39,7 +89,7 @@ export default function Allitems() {
               mt-10
             "
           >
-            {items.map((item, index) => (
+            {filteredItems.map((item, index) => (
               <div
                 key={index}
                 className="
@@ -119,26 +169,23 @@ export default function Allitems() {
             ))}
           </div>
 
-          {/* ✅ See More Link (دايمًا ظاهر - من غير شرط ولا لوجيك) */}
-          {/* ⭐ See More Button (LINK) */}
-<div className="flex justify-center mt-10">
-  <a
-    href="/all-items"
-    className="
-      px-12 py-3 rounded-full 
-      bg-[#FF4033] text-white 
-      text-[16px] font-semibold 
-      transition duration-200
-      hover:bg-[#e6392d]
-      w-[168px] h-[56px]
-      flex items-center justify-center
-    "
-  >
-    See More
-  </a>
-</div>
-
-
+          {/* زرار زي ما هو */}
+          <div className="flex justify-center mt-10">
+            <a
+              href="/all-items"
+              className="
+                px-12 py-3 rounded-full 
+                bg-[#FF4033] text-white 
+                text-[16px] font-semibold 
+                transition duration-200
+                hover:bg-[#e6392d]
+                w-[168px] h-[56px]
+                flex items-center justify-center
+              "
+            >
+              See More
+            </a>
+          </div>
         </div>
       </div>
     </div>
