@@ -10,7 +10,7 @@ import Popular from "./Popular";
 import Customer from "./Customer";
 import FAQ from "./FAQ";
 import Footer from "./Footer";
-
+ 
 
 export default function 
 () {
