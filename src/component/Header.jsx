@@ -7,8 +7,8 @@ export default function Header() {
   const [activeLink, setActiveLink] = useState("Home");
 
   const navItems = [
-    { name: "Home", href: "#" },
-    { name: "Menu", href: "#" },
+    { name: "Home", href: "./Home.jsx" },
+    { name: "Menu", href: "./Menu.jsx" },
     { name: "Contact Us", href: "#" },
     { name: "About Us", href: "#" },
     { name: "Blog", href: "#" },
