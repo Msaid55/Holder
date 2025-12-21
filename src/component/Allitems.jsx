@@ -8,6 +8,15 @@ import Meal5 from "../images/Meal5.svg";
 import Meal6 from "../images/Meal6.svg";
 import Meal7 from "../images/Meal7.svg";
 
+import Drink1 from "../images/Drink1.png";
+import Drink2 from "../images/Drink2.png";
+import Drink3 from "../images/Drink3.png";
+import Drink4 from "../images/Drink4.png";
+import Drink5 from "../images/Drink5.png";
+import Drink6 from "../images/Drink6.png";
+import Drink7 from "../images/Drink7.png";
+import Drink8 from "../images/Drink8.png";
+
 export default function Allitems({ activeTab = "Break Fast" }) {
   const items = [
     // Break Fast (8)
@@ -61,11 +70,23 @@ export default function Allitems({ activeTab = "Break Fast" }) {
     { title: "Pancakes", price: "$40", img: Meal3, category: "Burger" },
 
     // Drinks (مثال)
-    { title: "Virgin Mojito", price: "$15", img: Meal7, category: "Drinks" },
-    { title: "Lemon Juice", price: "$12", img: Meal6, category: "Drinks" },
+    { title: "Virgin Mojito", price: "$15", img:Drink1, category: "Drinks" },
+    { title: "Lemon Juice", price: "$12", img: Drink2, category: "Drinks" },
+    { title: "Lemon Juice", price: "$12", img: Drink3, category: "Drinks" },
+    { title: "Lemon Juice", price: "$12", img: Drink4, category: "Drinks" },
+    { title: "Lemon Juice", price: "$12", img: Drink5, category: "Drinks" },
+    { title: "Lemon Juice", price: "$12", img: Drink6, category: "Drinks" },
+    { title: "Lemon Juice", price: "$12", img: Drink7, category: "Drinks" },
+    { title: "Lemon Juice", price: "$12", img: Drink8, category: "Drinks" },
 
     // Desert (مثال)
     { title: "Ice Cream", price: "$10", img: Meal2, category: "Desert" },
+    { title: "Chocolate Cake", price: "$20", img: Meal5, category: "Desert" },
+    { title: "Chocolate Cake", price: "$20", img: Meal5, category: "Desert" },
+    { title: "Chocolate Cake", price: "$20", img: Meal5, category: "Desert" },
+    { title: "Chocolate Cake", price: "$20", img: Meal5, category: "Desert" },
+    { title: "Chocolate Cake", price: "$20", img: Meal5, category: "Desert" },
+    { title: "Chocolate Cake", price: "$20", img: Meal5, category: "Desert" },
     { title: "Chocolate Cake", price: "$20", img: Meal5, category: "Desert" },
   ];
 
