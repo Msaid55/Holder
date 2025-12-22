@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Capa from "../assets/Capa.svg";
+import { Link } from 'react-router-dom';
 import { FiSearch, FiShoppingBag, FiChevronDown } from "react-icons/fi";
 
 export default function Header() {
@@ -7,11 +8,11 @@ export default function Header() {
   const [activeLink, setActiveLink] = useState("Home");
 
   const navItems = [
-    { name: "Home", href: "./Home.jsx" },
-    { name: "Menu", href: "./Menu.jsx" },
-    { name: "Contact Us", href: "#" },
-    { name: "About Us", href: "#" },
-    { name: "Blog", href: "#" },
+    { name: "Home", to: "/" },
+    { name: "Menu", to: "/Menu" },
+    { name: "Contact Us", to: "/contact" },
+    { name: "About Us", to: "/about" },
+    { name: "Blog", to: "/blog" },
   ];
 
   const desktopLinkClass = (name) =>
@@ -23,7 +24,7 @@ export default function Header() {
     "w-full px-4 py-2 text-gray-800 hover:bg-gray-50";
 
   return (
-    <header className="w-full bg-white">
+    <header className="w-full">
       {/* TOP BAR */}
       <div className="mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-[120px]">
         <div className="flex items-center gap-3">
@@ -33,17 +34,16 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
-              onClick={(e) => {
-                e.preventDefault();
+              to={item.to}
+              onClick={() => {
                 setActiveLink(item.name);
               }}
               className={desktopLinkClass(item.name)}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -84,18 +84,17 @@ export default function Header() {
               {navItems
                 .filter((item) => item.name !== activeLink)
                 .map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
-                    onClick={(e) => {
-                      e.preventDefault();
+                    to={item.to}
+                    onClick={() => {
                       setActiveLink(item.name);
                       setMobileMenuOpen(false);
                     }}
                     className={mobileLinkClass(item.name)}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
             </nav>
             {/* Mobile icons inside dropdown */}
