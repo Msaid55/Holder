@@ -8,7 +8,7 @@ export default function HeadItem() {
 
   return (
     <div className="w-full bg-white">
-      <div className="max-w-8xl mx-auto px-4 py-10">
+      <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16">
 
         <div className="flex justify-center">
           <div className="flex flex-col items-center gap-1">

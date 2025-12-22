@@ -12,7 +12,7 @@ export default function Header2({ active, setActive }) {
       <div className="hidden md:flex flex-col items-center w-full">
         <div className="w-full h-[12px] bg-[#FF4033] rounded-full"></div>
 
-        <div className="w-[816px] h-[50px] flex gap-6 justify-center -mt-2.5">
+        <div className="w-[816px] h-[50px] flex gap-12 justify-center -mt-2.5">
           {tabs.map(tab => (
             <button
               key={tab}

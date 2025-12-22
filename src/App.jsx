@@ -8,9 +8,7 @@ import { Routes, Route} from 'react-router-dom'
 
 export default function App() {
   return (
-    <div className="bg-white">
-  <Header/>         
-
+<div className="">
 <main>
 <Routes>
 <Route path="/" element={<Home />} />

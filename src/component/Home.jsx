@@ -10,12 +10,14 @@ import Popular from "./Popular";
 import Customer from "./Customer";
 import FAQ from "./FAQ";
 import Footer from "./Footer";
+import Header from "./Header";
  
 
 export default function 
 () {
   return (
-    <div>
+    <div className="bg-white">
+        <Header/>
         <Hero1/>
         <Flfl/>
         <Boxs/>
