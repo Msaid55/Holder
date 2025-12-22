@@ -8,14 +8,25 @@ import Meal5 from "../images/Meal5.svg";
 import Meal6 from "../images/Meal6.svg";
 import Meal7 from "../images/Meal7.svg";
 
-import Drink1 from "../images/Drink1.png";
-import Drink2 from "../images/Drink2.png";
-import Drink3 from "../images/Drink3.png";
-import Drink4 from "../images/Drink4.png";
-import Drink5 from "../images/Drink5.png";
-import Drink6 from "../images/Drink6.png";
-import Drink7 from "../images/Drink7.png";
-import Drink8 from "../images/Drink8.png";
+import Drink1 from "../images/Drink1.svg";
+import Drink2 from "../images/Drink2.svg";
+import Drink3 from "../images/Drink3.svg";
+import Drink4 from "../images/Drink4.svg";
+import Drink5 from "../images/Drink5.svg";
+import Drink6 from "../images/Drink6.svg";
+import Drink7 from "../images/Drink7.svg";
+import Drink8 from "../images/Drink8.svg";
+
+import Desirt1 from "../images/Desirt1.svg";
+import Desirt2 from "../images/Desirt2.svg";
+import Desirt3 from "../images/Desirt3.svg";
+import Desirt4 from "../images/Desirt4.svg";
+import Desirt5 from "../images/Desirt5.svg";
+import Desirt6 from "../images/Desirt6.svg";
+import Desirt7 from "../images/Desirt7.svg";
+import Desirt8 from "../images/Desirt8.svg";
+
+
 
 export default function Allitems({ activeTab = "Break Fast" }) {
   const items = [
@@ -80,14 +91,14 @@ export default function Allitems({ activeTab = "Break Fast" }) {
     { title: "Lemon Juice", price: "$12", img: Drink8, category: "Drinks" },
 
     // Desert (مثال)
-    { title: "Ice Cream", price: "$10", img: Meal2, category: "Desert" },
-    { title: "Chocolate Cake", price: "$20", img: Meal5, category: "Desert" },
-    { title: "Chocolate Cake", price: "$20", img: Meal5, category: "Desert" },
-    { title: "Chocolate Cake", price: "$20", img: Meal5, category: "Desert" },
-    { title: "Chocolate Cake", price: "$20", img: Meal5, category: "Desert" },
-    { title: "Chocolate Cake", price: "$20", img: Meal5, category: "Desert" },
-    { title: "Chocolate Cake", price: "$20", img: Meal5, category: "Desert" },
-    { title: "Chocolate Cake", price: "$20", img: Meal5, category: "Desert" },
+    { title: "Matcha Latte", price: "$10", img: Desirt1, category: "Desert" },
+    { title: "Blue Lagoon", price: "$20", img: Desirt2, category: "Desert" },
+    { title: "Cola with Ice & Lemon", price: "$20", img: Desirt3, category: "Desert" },
+    { title: "Chocolate Cake", price: "$20", img: Desirt4, category: "Desert" },
+    { title: "Chocolate Cake", price: "$20", img: Desirt5, category: "Desert" },
+    { title: "Chocolate Cake", price: "$20", img: Desirt6, category: "Desert" },
+    { title: "Chocolate Cake", price: "$20", img: Desirt7, category: "Desert" },
+    { title: "Chocolate Cake", price: "$20", img: Desirt8, category: "Desert" },
   ];
 
   // ✅ الفلترة حسب التاب
