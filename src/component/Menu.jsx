@@ -25,9 +25,11 @@ export default function Menu() {
             flex flex-col items-center justify-center 
             text-white 
             pointer-events-none
+            mt-20
+            md:mt-0
           "
         >
-          <h1 className="text-[100px] font-bold leading-none">
+          <h1 className="text-[30px] md:text-[100px] font-bold leading-none">
             All Items
           </h1>
           <img src={DotsAll} alt="" className="mt-2" />

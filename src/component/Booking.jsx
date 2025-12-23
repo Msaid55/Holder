@@ -17,9 +17,11 @@ export default function Booking() {
                     flex flex-col items-center justify-center 
                     text-white 
                     pointer-events-none
+                    mt-12
+                    md:mt-0
                   "
             >
-                <h1 className="text-[90px] font-bold leading-none">
+                <h1 className="text-[30px]  md:text-[90px] font-bold leading-none">
                 Book Your Table
                 </h1>
                 <img src={Group149} alt="" className="mt-6 w-[765px] h-[6px]" />
