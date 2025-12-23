@@ -10,7 +10,7 @@ export default function StandardHeader() {
   const navItems = [
     { name: "Home", to: "/" },
     { name: "Menu", to: "/menu" },
-    { name: "Contact Us", to: "/contact" },
+    { name: "Booking", to: "/Booking" },
     { name: "About Us", to: "/about" },
     { name: "Blog", to: "/blog" },
   ];
