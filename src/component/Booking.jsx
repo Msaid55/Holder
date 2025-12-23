@@ -1,0 +1,29 @@
+import React from 'react'
+import StandardHeader from './StandardHeader'
+import Group149 from "../images/Group149.svg";
+
+
+export default function Booking() {
+    return (
+        <div>
+            <StandardHeader />
+            {/* Centered Title */}
+            <div
+                className="
+                    absolute 
+                    top-55 left-1/2 
+                    -translate-x-1/2 -translate-y-1/2
+                    z-30 
+                    flex flex-col items-center justify-center 
+                    text-white 
+                    pointer-events-none
+                  "
+            >
+                <h1 className="text-[90px] font-bold leading-none">
+                Book Your Table
+                </h1>
+                <img src={Group149} alt="" className="mt-6 w-[765px] h-[6px]" />
+            </div>
+        </div>
+    )
+}
