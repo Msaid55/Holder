@@ -4,38 +4,42 @@ export default function Contact() {
   return (
     <section className="w-full h-[750px] bg-white pt-15">
       <div className='bg-[#007A59] w-full h-[638px] rounded-2xl'>
-        <div className="max-w-8xl mx-auto hpx-4 md:px-8 lg:px-16 flex gap-10">
+        <div className="max-w-8xl mx-auto h-full hpx-4 md:px-8 lg:px-16 flex gap-10">
 
           {/* LEFT – FORM */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-[560px]">
-            <form className="flex flex-col gap-4">
+          <div className='h-full flex items-center'>
+                        
+            <div className="bg-white rounded-2xl shadow-xl p-8  w-[560px] h-[549px]">
+              <form className="flex flex-col gap-4">
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <InputField label="Your Name*" />
-                <InputField label="Email*" />
-              </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 h-[66px] gap-4">
+                  <InputField label="Your Name*" />
+                  <InputField label="Email*" />
+                </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <InputField label="Phone Number*" />
-                <InputField label="Number of Guests*" />
-              </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <InputField label="Phone Number*" />
+                  <InputField label="Number of Guests*" />
+                </div>
 
-              <InputField label="Date of Reservation*" />
-              <InputField label="Time of Reservation*" />
+                <InputField label="Date of Reservation*" />
+                <InputField label="Time of Reservation*" />
 
-              <div>
-                <label className="text-sm font-medium">Special Request</label>
-                <textarea
-                  rows="4"
-                  className="w-full mt-1 border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600 resize-none"
-                />
-              </div>
+                <div>
+                  <label className="text-sm text-black font-medium">Special Request</label>
+                  <textarea
+                    rows="2"
+                    className="w-full mt-1 border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600 resize-none"
+                  />
+                </div>
 
-              <button className="w-fit bg-[#007a59] text-white px-8 py-2 rounded-full mt-4">
-                Book
-              </button>
-            </form>
+                <button className="w-fit bg-[#007a59] text-white px-8 py-2 rounded-full mt-4">
+                  Book
+                </button>
+              </form>
+            </div>
           </div>
+
 
           {/* RIGHT – INFO */}
           <div className="relative text-white max-w-md w-full">
