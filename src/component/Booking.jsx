@@ -3,7 +3,7 @@ import StandardHeader from './StandardHeader'
 import Group149 from "../images/Group149.svg";
 import Contact from './Contact';
 import Tables from './Tables';
-import Footer from './footer';
+import Footer from './Footer';
 
 
 export default function Booking() {
@@ -26,7 +26,7 @@ export default function Booking() {
                 <h1 className="text-[30px] md:text-[90px] font-bold leading-none">
                 Book Your Table
                 </h1>
-                <img src={Group149} alt="" className="mt-6 w-[765px] h-[6px]" />
+                <img src={Group149} alt="" className="mt-6 w-[215px] h-[6px]" />
             </div>
             <Contact/>
             <Tables/>

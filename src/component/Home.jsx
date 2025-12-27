@@ -1,6 +1,6 @@
 import About from "./About";
 import Android from "./Android";
-import Blog from "./Blog";
+import Blog1 from "./Blog1";
 import Boxs from "./Boxs";
 import Flfl from "./Flfl";
 import HeadItem from "./HeadItem";
@@ -26,7 +26,7 @@ export default function
         <HeadItem/>
         <Ourchafe/>
         <Customer/>
-        <Blog/>
+        <Blog1/>
         <Android/>
         <FAQ/>
         <Footer/>
