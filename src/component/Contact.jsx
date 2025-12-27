@@ -1,5 +1,9 @@
-import RedChilli2 from '../images/RedChilli2.svg';
+import RedChilli3 from '../images/RedChilli3.svg';
 import InputField from "./InputField";
+import { BsTelephone } from "react-icons/bs";
+import { SiGmail } from "react-icons/si";
+import { FaInstagram } from "react-icons/fa";
+import { LuYoutube } from "react-icons/lu";
 export default function Contact() {
   return (
     <section className="w-full h-[750px] bg-white pt-15">
@@ -42,31 +46,36 @@ export default function Contact() {
 
 
           {/* RIGHT – INFO */}
-          <div className="relative text-white max-w-md w-full">
+          <div className='h-full flex items-center' >
+            <div className="relative  text-white max-w-md h-[549px] w-full">
 
             {/* Pepper Image */}
             <img
-              src={RedChilli2}
+              src={RedChilli3}
               alt=""
               className="absolute w-[308.11px] h-[247px]"
             />
 
-            <div className="space-y-6 mt-70">
-              <div>
-                <h3 className="font-semibold text-lg">Address</h3>
-                <p className="text-sm opacity-90">
+            <div className="space-y-3 mt-70">
+              <div className='w-[558px] '>
+                <h3 className="font-bold text-[25px]">Address</h3>
+                <p className="text-[18px] font-light opacity-90">
                   57, Sultan Market (4th Floor), Dakshin Khan, Dhaka-1230, Bangladesh
                 </p>
               </div>
 
               <div>
-                <h3 className="font-semibold text-lg">Open Time</h3>
-                <p className="text-sm">Mon - Fri : 11:00 AM - 10:00 PM</p>
-                <p className="text-sm">Sat - Sun : 09:00 AM - 11:00 PM</p>
+                <h3 className="font-bold text-[25px]">Open Time</h3>
+                <p className="text-[18px] font-light">Mon - Fri : 11:00 AM - 10:00 PM</p>
+                <p className="text-[18px]  font-light">Sat - Sun : 09:00 AM - 11:00 PM</p>
               </div>
 
-              <div className="flex gap-3">
-                {["📞", "✉️", "📸", "▶️"].map((icon, i) => (
+              <div>
+
+                <p className='text-[25px] font-bold mb-2 '>Contact we are</p>
+                <div className="flex gap-3">
+                
+                {[<BsTelephone />,<SiGmail /> , <FaInstagram />, <LuYoutube />].map((icon, i) => (
                   <div
                     key={i}
                     className="w-10 h-10 rounded-full bg-white text-[#007A59] flex items-center justify-center"
@@ -75,9 +84,13 @@ export default function Contact() {
                   </div>
                 ))}
               </div>
+              </div>
+              
             </div>
 
           </div>
+          </div>
+          
 
         </div>
       </div>
