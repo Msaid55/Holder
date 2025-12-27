@@ -188,7 +188,7 @@ export default function Tables() {
 
   return (
     <div className="bg-white">
-      <div className="max-w-8xl h-[1052px] mx-auto px-4 md:px-8 lg:px-16 py-10">
+      <div className="max-w-8xl h-aute mx-auto px-4 md:px-8 lg:px-16 py-10">
         <div className="rounded-2xl h-full bg-[#fbf3e6] p-5 md:p-7">
           <div className="flex flex-col lg:flex-row items-start gap-6 w-full">
             {/* LEFT - Floor Plan */}
