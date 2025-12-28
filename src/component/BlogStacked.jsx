@@ -136,59 +136,60 @@ export default function BlogStacked({ blogs = blogsData }) {
         </div>
 
         {/* Mobile / Small screens */}
-        <div className="flex md:hidden flex-col items-center gap-8 w-[386.5px]">
-          {blogs .slice(startIndex, startIndex + itemsPerPage)
-  .map((blog, index) => (
-            <div
-              key={startIndex + index}
-              className="group overflow-hidden transition-all duration-500 w-full h-[440px]"
-            >
-              {/* Image */}
-              <div className="relative h-[228px] overflow-hidden rounded-2xl">
-                <img
-                  src={blog.img}
-                  alt={blog.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <span className="absolute bottom-4 left-4 backdrop-blur px-4 py-1 rounded-lg text-sm">
-                  {blog.tag}
-                </span>
-              </div>
+        
+<div className="flex md:hidden flex-col items-center gap-8 w-full max-w-[386.5px] px-4">
+  {blogs.slice(startIndex, startIndex + itemsPerPage).map((blog, index) => (
+    <div
+      key={startIndex + index}
+      className="group overflow-hidden transition-all duration-500 w-full h-[440px] bg-white rounded-2xl"
+    >
+      {/* Image */}
+      <div className="relative h-[228px] overflow-hidden rounded-2xl">
+        <img
+          src={blog.img}
+          alt={blog.title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        <span className="absolute bottom-4 left-4 backdrop-blur px-4 py-1 rounded-lg text-sm">
+          {blog.tag}
+        </span>
+      </div>
 
-              {/* Content */}
-              <div className="pt-4">
-                <p className="text-sm text-gray-400 mb-1">
-                  Owner Jack Arthur : {blog.date}
-                </p>
-                <h3 className="text-[18px] font-bold text-[#FF4033] mb-1">
-                  {blog.title}
-                </h3>
-                <p className="text-[14px] text-black leading-6">
-                  {blog.descShort}
-                  {openIndex !== index && (
-                    <span
-                      onClick={() => setOpenIndex(index)}
-                      className="text-[#FF4033] cursor-pointer font-medium ml-1"
-                    >
-                      Read more...
-                    </span>
-                  )}
-                  {openIndex === index && (
-                    <>
-                      <span> {blog.descMore}</span>
-                      <span
-                        onClick={() => setOpenIndex(null)}
-                        className="text-[#FF4033] cursor-pointer font-medium ml-1"
-                      >
-                        Read less
-                      </span>
-                    </>
-                  )}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+      {/* Content */}
+      <div className="pt-4">
+        <p className="text-sm text-gray-400 mb-1">
+          Owner Jack Arthur : {blog.date}
+        </p>
+        <h3 className="text-[18px] font-bold text-[#FF4033] mb-1">
+          {blog.title}
+        </h3>
+        <p className="text-[14px] text-black leading-6">
+          {blog.descShort}
+          {openIndex !== index && (
+            <span
+              onClick={() => setOpenIndex(index)}
+              className="text-[#FF4033] cursor-pointer font-medium ml-1"
+            >
+              Read more...
+            </span>
+          )}
+          {openIndex === index && (
+            <>
+              <span> {blog.descMore}</span>
+              <span
+                onClick={() => setOpenIndex(null)}
+                className="text-[#FF4033] cursor-pointer font-medium ml-1"
+              >
+                Read less
+              </span>
+            </>
+          )}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+
 
         {/* Arrows (Desktop only) */}
         <div className="flex items-center gap-6 mt-10">

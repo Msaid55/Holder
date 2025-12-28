@@ -71,7 +71,7 @@ export default function About() {
                     {/* LEFT CIRCLE IMAGE (mobile: bottom, desktop: left) */}
                     <div
                         className="
-              w-[380px] h-[367px]
+              w-[290px] h-[290px]
               sm:w-[320px] sm:h-[320px]
               md:w-[380px] md:h-[380px]
               lg:w-[450px] lg:h-[450px]
