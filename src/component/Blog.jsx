@@ -1,7 +1,9 @@
 import React from 'react'
 import StandardHeader from './StandardHeader'
-import Group149 from "../images/Group149.svg";
+import Group142 from "../images/Group142.svg";
 import BlogStacked from './BlogStacked';
+import Footer from './Footer';
+
 
 
 export default function Blog() {
@@ -24,9 +26,10 @@ export default function Blog() {
                 <h1 className="text-[30px] md:text-[90px] font-bold leading-none">
                     Blog
                 </h1>
-                <img src={Group149} alt="" className="mt-6 w-[765px] h-[6px]" />
+                <img src={Group142} alt="" className="mt-6 md:w-[215px] w-[65px] h-[6px]" />
             </div>
             <BlogStacked />
+            <Footer />
             </div>
               )
             }
