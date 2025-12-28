@@ -28,30 +28,30 @@ const blogsData = [
     descShort: "Short desc...",
     descMore: "More details..."
   },
-  {
-    img: Rectangle82,
-    tag: "Food",
-    date: "Oct - 10 - 2025",
-    title: "New menu launch",
-    descShort: "Short desc...",
-    descMore: "More details..."
-  },
-  {
-    img: Rectangle82,
-    tag: "Dining",
-    date: "Nov - 01 - 2025",
-    title: "Chef's special tips",
-    descShort: "Short desc...",
-    descMore: "More details..."
-  },
-  {
-    img: Rectangle83,
-    tag: "Restaurant",
-    date: "Dec - 05 - 2025",
-    title: "Holiday celebration",
-    descShort: "Short desc...",
-    descMore: "More details..."
-  },
+  // {
+  //   img: Rectangle82,
+  //   tag: "Food",
+  //   date: "Oct - 10 - 2025",
+  //   title: "New menu launch",
+  //   descShort: "Short desc...",
+  //   descMore: "More details..."
+  // },
+  // {
+  //   img: Rectangle82,
+  //   tag: "Dining",
+  //   date: "Nov - 01 - 2025",
+  //   title: "Chef's special tips",
+  //   descShort: "Short desc...",
+  //   descMore: "More details..."
+  // },
+  // {
+  //   img: Rectangle83,
+  //   tag: "Restaurant",
+  //   date: "Dec - 05 - 2025",
+  //   title: "Holiday celebration",
+  //   descShort: "Short desc...",
+  //   descMore: "More details..."
+  // },
 ];
 
 export default function BlogStacked({ blogs = blogsData }) {
@@ -59,17 +59,17 @@ export default function BlogStacked({ blogs = blogsData }) {
 
   return (
     <section className="w-full bg-white">
-      <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-16">
+      <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-16 flex flex-col items-center">
 
         {/* الكروت */}
-        <div className="flex flex-col items-center gap-8 w-[996px] h-[2515px]">
+        <div className="flex flex-col items-center gap-8 md:w-[996px] w-[386.5px]">
           {blogs.map((blog, index) => (
             <div
               key={index}
-              className="group overflow-hidden transition-all duration-500 w-full h-[773px]"
+              className="group overflow-hidden transition-all duration-500 w-full md:h-[773px] h-[440px]"
             >
               {/* الصورة */}
-              <div className="relative h-[220px] overflow-hidden rounded-2xl">
+              <div className="relative md:h-[497px] h-[228px] overflow-hidden rounded-2xl">
                 <img
                   src={blog.img}
                   alt={blog.title}
