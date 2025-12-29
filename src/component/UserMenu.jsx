@@ -33,10 +33,9 @@ export default function UserMenu() {
         onClick={() => setOpen((p) => !p)}
         className="
           flex items-center gap-2
-          px-4 py-2 rounded-md
-          border border-yellow-400/70
-          bg-black/40 backdrop-blur
-          text-yellow-400
+          px-4 py-2 rounded-full
+          bg-black/10  
+          text-black
           transition hover:bg-black/60
         "
       >
@@ -45,7 +44,7 @@ export default function UserMenu() {
         <span
           className="
             w-9 h-9 rounded-full
-            bg-yellow-400 text-black
+            bg-emerald-700 text-white
             flex items-center justify-center
           "
         >
@@ -65,7 +64,7 @@ export default function UserMenu() {
             absolute right-0 mt-2 w-48
             rounded-md overflow-hidden
             bg-black/90 backdrop-blur
-            shadow-xl border border-yellow-400/30
+            shadow-xl border
             z-50
           "
         >
@@ -74,8 +73,8 @@ export default function UserMenu() {
             onClick={() => setOpen(false)}
             className="
               block px-5 py-3
-              text-yellow-400 font-semibold
-              hover:bg-yellow-400 hover:text-black
+              text-black font-semibold
+              bg-emerald-700 hover:text-black
               transition
             "
           >
@@ -87,8 +86,8 @@ export default function UserMenu() {
             onClick={() => setOpen(false)}
             className="
               block px-5 py-3
-              text-yellow-400 font-semibold
-              hover:bg-yellow-400 hover:text-black
+              text-emerald-700 font-semibold
+              hover:bg-emerald-700 hover:text-black
               transition
             "
           >

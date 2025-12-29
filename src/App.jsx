@@ -5,6 +5,7 @@ import Home from "./component/Home";
 import Menu from "./component/Menu";
 import Booking from "./component/Booking";
 import Blog from "./component/Blog";
+import AboutUs from "./component/AboutUs";
 import SplashLoader from "./component/SplashLoader";
 import Login from "./component/Login";
 import Register from "./component/Register";
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/menu" element={<Menu />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
