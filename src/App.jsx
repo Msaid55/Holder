@@ -6,6 +6,8 @@ import Menu from "./component/Menu";
 import Booking from "./component/Booking";
 import Blog from "./component/Blog";
 import SplashLoader from "./component/SplashLoader";
+import Login from "./component/Login";
+import Register from "./component/Register";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -29,6 +31,9 @@ export default function App() {
           <Route path="/menu" element={<Menu />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
           <Route path="*" element={<div>404 - Not Found</div>} />
         </Routes>
       </main>
