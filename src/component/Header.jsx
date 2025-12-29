@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Capa from "../assets/Capa.svg";
 import { Link } from 'react-router-dom';
 import { FiSearch, FiShoppingBag, FiChevronDown } from "react-icons/fi";
+import UserMenu from "./UserMenu";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -55,6 +56,7 @@ export default function Header() {
           <div className="w-10 h-10 flex items-center justify-center rounded-full bg-emerald-700 text-white cursor-pointer">
             <FiShoppingBag size={20} />
           </div>
+          <UserMenu />
         </div>
       </div>
 
@@ -97,6 +99,10 @@ export default function Header() {
                   </Link>
                 ))}
             </nav>
+            <div className="mt-3 px-2">
+  <UserMenu />
+</div>
+
             {/* Mobile icons inside dropdown */}
             <div className="flex items-center gap-4 px-4 py-3 border-t border-gray-100">
               <div className="w-10 h-10 flex items-center justify-center rounded-full bg-emerald-700 text-white">

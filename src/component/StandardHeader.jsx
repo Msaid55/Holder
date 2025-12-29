@@ -3,7 +3,7 @@ import BGitems from "../images/BGitems.png";
 import Capa from "../assets/Capa.svg";
 import { NavLink, useLocation } from "react-router-dom";
 import { FiSearch, FiShoppingBag, FiChevronDown } from "react-icons/fi";
-
+import UserMenu from "./UserMenu";
 export default function StandardHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
