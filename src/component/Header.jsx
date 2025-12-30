@@ -1,33 +1,42 @@
 import React, { useState } from "react";
 import Capa from "../assets/Capa.svg";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from "react-router-dom";
 import { FiSearch, FiShoppingBag, FiChevronDown } from "react-icons/fi";
 import UserMenu from "./UserMenu";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("Home");
+  const location = useLocation();
 
   const navItems = [
     { name: "Home", to: "/" },
-    { name: "Menu", to: "/Menu" },
-    { name: "Booking", to: "/Booking" },
+    { name: "Menu", to: "/menu" },
+    { name: "Booking", to: "/booking" },
     { name: "About Us", to: "/about" },
     { name: "Blog", to: "/blog" },
   ];
 
+  const pathname = location.pathname.toLowerCase();
+  const activeItem =
+    navItems.find((item) =>
+      item.to === "/"
+        ? pathname === "/"
+        : pathname.startsWith(item.to.toLowerCase())
+    ) || navItems[0];
+
   const desktopLinkClass = (name) =>
-    name === activeLink
+    name === activeItem.name
       ? "px-4 py-2 bg-emerald-700 text-white rounded-full transition-all duration-300 ease-in-out"
       : "text-black hover:text-emerald-700 transition-all duration-300 ease-in-out";
 
   const mobileLinkClass = () =>
-    "w-full px-4 py-2 text-gray-800 hover:bg-gray-50";
+    "w-full px-4 py-3 text-gray-800 hover:bg-gray-50 rounded-lg";
 
   return (
     <header className="w-full">
-      {/* TOP BAR */}
+      {/* ===== TOP BAR ===== */}
       <div className="mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-[120px]">
+        {/* Logo */}
         <div className="flex items-center gap-3">
           <img src={Capa} alt="logo" className="w-[161.84px] h-[45px]" />
         </div>
@@ -38,9 +47,6 @@ export default function Header() {
             <Link
               key={item.name}
               to={item.to}
-              onClick={() => {
-                setActiveLink(item.name);
-              }}
               className={desktopLinkClass(item.name)}
             >
               {item.name}
@@ -48,25 +54,35 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Desktop Icons */}
+        {/* Desktop Right Side */}
         <div className="hidden md:flex items-center gap-4">
-          <div className="w-10 h-10 flex items-center justify-center rounded-full bg-emerald-700 text-white cursor-pointer">
+          <div className="w-10 h-10 flex items-center justify-center hover:scale-110 transition rounded-full bg-emerald-700 text-white cursor-pointer">
             <FiSearch size={20} />
           </div>
-          <div className="w-10 h-10 flex items-center justify-center rounded-full bg-emerald-700 text-white cursor-pointer">
+          <div className="w-10 h-10 flex items-center justify-center hover:scale-110 transition rounded-full bg-emerald-700 text-white cursor-pointer">
             <FiShoppingBag size={20} />
           </div>
           <UserMenu />
         </div>
+
+        {/* ✅ Mobile Icons in same row with Logo */}
+        <div className="md:hidden flex items-center gap-3">
+          <div className="w-10 h-10 flex items-center justify-center hover:scale-110 transition rounded-full bg-emerald-700 text-white">
+            <FiSearch size={20} />
+          </div>
+          <div className="w-10 h-10 flex items-center justify-center hover:scale-110 transition rounded-full bg-emerald-700 text-white">
+            <FiShoppingBag size={20} />
+          </div>
+        </div>
       </div>
 
-      {/* MOBILE DROPDOWN TRIGGER */}
-      <div className="md:hidden px-4 pb-3">
+      {/* ✅ Mobile Row: NAV dropdown + USER dropdown جنب بعض */}
+      <div className="md:hidden px-4 pb-3 flex items-center gap-3">
         <button
           onClick={() => setMobileMenuOpen((prev) => !prev)}
-          className="w-full flex items-center justify-between bg-emerald-700 text-white px-5 py-3 rounded-full"
+          className="flex-1 w-full flex items-center justify-between bg-emerald-700 text-white px-5 py-3 rounded-full"
         >
-          <span className="font-medium">{activeLink}</span>
+          <span className="font-medium">{activeItem.name}</span>
           <span
             className={`transition-transform duration-200 ${
               mobileMenuOpen ? "rotate-180" : ""
@@ -75,43 +91,29 @@ export default function Header() {
             <FiChevronDown size={18} />
           </span>
         </button>
+
+        {/* ✅ User dropdown جنب nav dropdown */}
+        <UserMenu />
       </div>
 
-      {/* MOBILE DROPDOWN MENU */}
+      {/* ✅ Mobile Dropdown Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden px-4 pb-4">
+        <div className="md:hidden px-4 pb-4 relative z-50">
           <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden">
-            <nav className="flex flex-col items-start py-2 space-y-1">
-              {/* هنا الفلترة: بنشيل الـ active من الليست */}
+            <nav className="flex flex-col items-start py-2 space-y-1 px-3">
               {navItems
-                .filter((item) => item.name !== activeLink)
+                .filter((item) => item.name !== activeItem.name)
                 .map((item) => (
                   <Link
                     key={item.name}
                     to={item.to}
-                    onClick={() => {
-                      setActiveLink(item.name);
-                      setMobileMenuOpen(false);
-                    }}
-                    className={mobileLinkClass(item.name)}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={mobileLinkClass()}
                   >
                     {item.name}
                   </Link>
                 ))}
             </nav>
-            <div className="mt-3 px-2">
-  <UserMenu />
-</div>
-
-            {/* Mobile icons inside dropdown */}
-            <div className="flex items-center gap-4 px-4 py-3 border-t border-gray-100">
-              <div className="w-10 h-10 flex items-center justify-center rounded-full bg-emerald-700 text-white">
-                <FiSearch size={20} />
-              </div>
-              <div className="w-10 h-10 flex items-center justify-center rounded-full bg-emerald-700 text-white">
-                <FiShoppingBag size={20} />
-              </div>
-            </div>
           </div>
         </div>
       )}
