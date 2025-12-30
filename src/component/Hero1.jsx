@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Hero2 from "./Hero2";
+import { NavLink } from "react-router-dom";
 
 export default function Hero1() {
   const words = ["Breakfast", "Dinner", "Lunch"];
@@ -69,9 +70,9 @@ export default function Hero1() {
                 <button className="w-[145px] h-[46px] bg-[#065B5E] flex items-center justify-center text-[#Ffff] rounded-full text-[18px] md:text-[22px] shadow-[#b3becc]">
                   Order Now
                 </button>
-                <button className="w-[109px] h-[46px] bg-[#ffff] flex items-center justify-center text-[#FF4033] rounded-full text-[18px] md:text-[22px] border-[#FF4033] border-2 shadow-[#b3becc]">
-                  Sign In
-                </button>
+                <NavLink to="/Register"  className="w-[109px] h-[46px] bg-[#ffff] flex items-center justify-center text-[#FF4033] rounded-full text-[18px] md:text-[22px] border-[#FF4033] border-2 shadow-[#b3becc]">
+                  Sign Up  
+                </NavLink>
               </div>
             </div>
           </section>
@@ -85,3 +86,10 @@ export default function Hero1() {
     </>
   );
 }
+
+
+
+
+
+
+
