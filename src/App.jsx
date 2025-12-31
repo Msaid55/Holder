@@ -9,6 +9,7 @@ import AboutUs from "./component/AboutUs";
 import SplashLoader from "./component/SplashLoader";
 import Login from "./component/Login";
 import Register from "./component/Register";
+import Cart from "./component/Cart";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/booking" element={<Booking />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 

@@ -59,9 +59,14 @@ export default function Header() {
           <div className="w-10 h-10 flex items-center justify-center hover:scale-110 transition rounded-full bg-emerald-700 text-white cursor-pointer">
             <FiSearch size={20} />
           </div>
+           feature/Cart
+          <Link to="/Cart"
+          className="w-10 h-10 flex items-center justify-center rounded-full bg-emerald-700 text-white cursor-pointer">
+ 
           <div className="w-10 h-10 flex items-center justify-center hover:scale-110 transition rounded-full bg-emerald-700 text-white cursor-pointer">
+            main
             <FiShoppingBag size={20} />
-          </div>
+          </Link>
           <UserMenu />
         </div>
 
