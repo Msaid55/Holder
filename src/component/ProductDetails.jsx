@@ -52,7 +52,7 @@ export default function ProductDetails() {
 
         {/* التفاصيل */}
         <div>
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="text-3xl text-black font-bold mb-4">
             {item.title}
           </h2>
 
@@ -68,7 +68,7 @@ export default function ProductDetails() {
             >
               -
             </button>
-            <span className="text-xl font-semibold">{count}</span>
+            <span className="text-xl text-black font-semibold">{count}</span>
             <button
               onClick={() => setCount(count + 1)}
               className="w-8 h-8 rounded-full bg-green-500 text-white"
@@ -78,7 +78,7 @@ export default function ProductDetails() {
           </div>
 
           {/* السعر */}
-          <div className="text-2xl font-bold mb-6">
+          <div className="text-2xl text-black font-bold mb-6">
             {item.price}
           </div>
 

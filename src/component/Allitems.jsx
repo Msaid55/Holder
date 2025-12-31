@@ -1,5 +1,5 @@
 import { FiShoppingBag } from "react-icons/fi";
-
+import { NavLink } from "react-router-dom";
 import Meat1 from "../images/Meat1.svg";
 import Meal2 from "../images/Meal2.svg";
 import Meal3 from "../images/Meal3.svg";
@@ -142,7 +142,7 @@ export default function Allitems({ activeTab = "Break Fast" }) {
                 ></div>
 
                 {/* الصورة */}
-                <div className="relative z-20 flex justify-center">
+                <NavLink to="/Cart" className="relative z-20 flex justify-center">
                   <img
                     src={item.img}
                     alt={item.title}
@@ -152,7 +152,7 @@ export default function Allitems({ activeTab = "Break Fast" }) {
                       group-hover:-translate-y-2
                     "
                   />
-                </div>
+                </NavLink>
 
                 {/* جسم الكارد */}
                 <div className="relative z-30 mt-14">
