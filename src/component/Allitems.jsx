@@ -25,7 +25,7 @@ import Desirt5 from "../images/Desirt5.svg";
 import Desirt6 from "../images/Desirt6.svg";
 import Desirt7 from "../images/Desirt7.svg";
 import Desirt8 from "../images/Desirt8.svg";
-
+import { Link } from "react-router-dom";
 
 
 export default function Allitems({ activeTab = "Break Fast" }) {
@@ -174,15 +174,21 @@ export default function Allitems({ activeTab = "Break Fast" }) {
                   </div>
 
                   <div className="flex items-center justify-between mt-5">
-                    <button
-                      className="
-                        px-8 py-2.5 rounded-full bg-[#007a59] text-white 
-                        text-[16px] font-semibold transition duration-200 
-                        hover:bg-[#036149]
-                      "
-                    >
-                      Order Now
-                    </button>
+                  <Link
+  to="/cart"
+  state={{ item, items }}
+>
+  <button
+    className="
+      px-8 py-2.5 rounded-full bg-[#007a59] text-white 
+      text-[16px] font-semibold transition duration-200 
+      hover:bg-[#036149]
+    "
+  >
+    Order Now
+  </button>
+</Link>
+
 
                     <button
                       className="
