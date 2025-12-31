@@ -5,19 +5,17 @@ import { LuYoutube } from "react-icons/lu";
 
 export default function ChefHeader({ chef }) {
   return (
-    <div className="flex flex-col md:flex-row  items-start gap-10">
-      
-      {/* IMAGE */}
+    <div className="flex flex-col md:flex-row items-stretch gap-10 ">
+
+      {/* IMAGE SECTION */}
       <div
         className="
-          relative w-[387px] h-[388px]
-
+          relative
+          w-full md:w-[387px]
+          h-auto md:h-[378px]
           bg-[#FFA000]
           rounded-2xl
           flex items-center justify-center
-          shadow-lg
-          transition-all duration-500
-          group-hover:scale-105
           overflow-hidden
         "
       >
@@ -25,33 +23,34 @@ export default function ChefHeader({ chef }) {
           src={chef.image}
           alt={chef.name}
           className="
-            absolute top-6
-            w-[299.13px] h-[387px]
+            
+            w-[299.13px]
+            h-[378px]
             object-contain
-            transition-all duration-500
-            group-hover:scale-110
+            transition-transform duration-500
+            hover:scale-105
           "
         />
       </div>
 
-      {/* TEXT CONTENT */}
-      <div className="flex flex-col items-start  md:text-left">
-        <h2 className="text-[30px] text-black font-bold mb-3">
+      {/* TEXT SECTION */}
+      <div className="flex flex-col justify-start  gap-4">
+        <h2 className="text-[30px] font-bold text-black">
           {chef.name}
         </h2>
 
-        <p className="text-[20px] text-black mb-4">
+        <p className="text-[20px] text-black">
           {chef.role}
         </p>
 
-        <p className="text-black font-light text-[20px] mb-4 max-w-[793px]">
+        <p className="text-[18px] max-w-[793px] text-black font-light leading-relaxed">
           {chef.bio}
         </p>
 
         <div>
-          <p className="text-[20px] mb-4 text-black">Contact me</p>
+          <p className="text-[18px] mb-3 text-black font-medium">Contact me</p>
 
-          <div className="flex gap-3 justify-center md:justify-start">
+          <div className="flex gap-3 ">
             {[<BsTelephone />, <SiGmail />, <FaInstagram />, <LuYoutube />].map(
               (icon, i) => (
                 <div
@@ -62,6 +61,7 @@ export default function ChefHeader({ chef }) {
                     bg-[#007A59]
                     text-white
                     flex items-center justify-center
+                    hover:scale-110 transition
                   "
                 >
                   {icon}

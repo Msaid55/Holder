@@ -34,12 +34,12 @@ export default function UserMenu() {
         className="
           flex items-center gap-2
           px-4 py-2 rounded-full
-          bg-black/10  
+          border border-[#007a59] 
           text-black
-          transition hover:bg-black/60
+           hover:scale-110 transition
         "
       >
-        <span className="font-semibold">User</span>
+        {/* <span className="font-semibold">User</span> */}
 
         <span
           className="
