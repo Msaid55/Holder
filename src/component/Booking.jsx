@@ -4,9 +4,10 @@ import Group149 from "../images/Group149.svg";
 import Contact from './Contact';
 import Tables from './Tables';
 import Footer from './Footer';
-
+import UseScrollReveal from "./UseScrollReveal";
 
 export default function Booking() {
+    UseScrollReveal();
     return (
         <div className='bg-white'>
             <StandardHeader />
@@ -20,6 +21,7 @@ export default function Booking() {
                     flex flex-col items-center justify-center 
                     text-white 
                     pointer-events-none mt-10 md:mt-0
+                     reveal
                    
                   "
             >

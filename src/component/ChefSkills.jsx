@@ -1,6 +1,8 @@
+import UseScrollReveal from "./UseScrollReveal"; 
 export default function ChefSkills({ skills }) {
+  UseScrollReveal();
     return (
-      <div className="grid md:grid-cols-3 gap-6 mt-10">
+      <div className="grid reveal md:grid-cols-3 gap-6 mt-10">
         {skills.map((skill, index) => (
           <div key={index}>
             <div className="flex justify-between text-black mb-1 text-sm">

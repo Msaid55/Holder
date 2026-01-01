@@ -4,11 +4,13 @@ import { BsTelephone } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
 import { FaInstagram } from "react-icons/fa";
 import { LuYoutube } from "react-icons/lu";
+import UseScrollReveal from "./UseScrollReveal";
 
 export default function Contact() {
+  UseScrollReveal();
   return (
-    <section className="w-full bg-white py-16">
-      <div className="bg-[#007A59] w-full rounded-2xl">
+    <section className="w-full  bg-white py-16">
+      <div className="bg-[#007A59] w-full  rounded-2xl">
         <div
           className="
             max-w-8xl mx-auto 
@@ -20,7 +22,7 @@ export default function Contact() {
         >
 
           {/* LEFT – FORM */}
-          <div className="flex justify-center lg:justify-start w-full">
+          <div className="flex  reveal justify-center lg:justify-start w-full">
             <div
               className="
                 bg-white rounded-2xl shadow-xl 
@@ -76,7 +78,7 @@ export default function Contact() {
           </div>
 
           {/* RIGHT – INFO */}
-          <div className="flex justify-center lg:justify-start w-full">
+          <div className="flex  reveal justify-center lg:justify-start w-full">
             <div className="relative text-white w-full max-w-md">
 
               {/* Pepper Image – Desktop only */}

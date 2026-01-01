@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-
+import UseScrollReveal from "./UseScrollReveal";
 /**
  * statuses:
  * available        -> green
@@ -47,6 +47,7 @@ const TABLES = [
 ];
 
 function FloorTable({ t, selected, onSelect }) {
+  UseScrollReveal();
   const ring =
     t.status === "available"
       ? "ring-emerald-500"
@@ -192,7 +193,7 @@ export default function Tables() {
         <div className="rounded-2xl h-full bg-[#fbf3e6] p-5 md:p-7">
           <div className="flex flex-col lg:flex-row items-start gap-6 w-full">
             {/* LEFT - Floor Plan */}
-            <div className="w-full">
+            <div className="w-full reveal">
               {/* top controls */}
               <div className="flex items-center gap-3 mb-4">
                 <div className="inline-flex bg-white rounded-full p-1 shadow-sm">
@@ -255,7 +256,7 @@ export default function Tables() {
             </div>
 
             {/* RIGHT - Panel */}
-            <div className="w-full lg:w-[260px] shrink-0">
+            <div className="w-full reveal lg:w-[260px] shrink-0">
               <div className="bg-white rounded-2xl shadow-sm p-5">
                 <div className="grid grid-cols-3 gap-4">
                   {rightList.map((t) => (

@@ -6,6 +6,7 @@ import Rectangle84 from "../images/Rectangle84.svg";
 import Rectangle85 from "../images/Rectangle85.svg";
 import Rectangle86 from "../images/Rectangle86.svg";
 import Rectangle87 from "../images/Rectangle87.svg";
+import UseScrollReveal from "./UseScrollReveal";
 
 /* ================== DATA ================== */
 const blogsData = [
@@ -67,6 +68,7 @@ const blogsData = [
 
 /* ================== COMPONENT ================== */
 export default function BlogStacked({ blogs = blogsData }) {
+  UseScrollReveal();
   const [openIndex, setOpenIndex] = useState(null);
   const [startIndex, setStartIndex] = useState(0);
 
@@ -77,7 +79,7 @@ export default function BlogStacked({ blogs = blogsData }) {
       <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-16 flex flex-col items-center">
 
         {/* Desktop / Laptop */}
-        <div className="hidden md:flex flex-col items-center gap-8 md:w-[996px] overflow-y-auto">
+        <div className="hidden md:flex reveal flex-col items-center gap-8 md:w-[996px] overflow-y-auto">
           {blogs
             .slice(startIndex, startIndex + itemsPerPage)
             .map((blog, index) => {
@@ -137,7 +139,7 @@ export default function BlogStacked({ blogs = blogsData }) {
 
         {/* Mobile / Small screens */}
         
-<div className="flex md:hidden flex-col items-center gap-8 w-full max-w-[386.5px] px-4">
+<div className="flex reveal md:hidden flex-col items-center gap-8 w-full max-w-[386.5px] px-4">
   {blogs.slice(startIndex, startIndex + itemsPerPage).map((blog, index) => (
     <div
       key={startIndex + index}
@@ -192,7 +194,7 @@ export default function BlogStacked({ blogs = blogsData }) {
 
 
         {/* Arrows (Desktop only) */}
-        <div className="flex items-center gap-6 mt-10">
+        <div className="flex reveal items-center gap-6 mt-10">
           <button
             onClick={() =>
               setStartIndex((prev) => Math.max(prev - itemsPerPage, 0))

@@ -4,8 +4,9 @@ import Header2 from "./Header2";
 import Allitems from "./Allitems";
 import { useState } from "react";
 import Footer from "./Footer";
-
+import UseScrollReveal from "./UseScrollReveal";
 export default function Menu() {
+  UseScrollReveal();
   const [activeTab, setActiveTab] = useState("Break Fast");
 
   return (
@@ -27,6 +28,7 @@ export default function Menu() {
             pointer-events-none
             mt-20
             md:mt-0
+            reveal
           "
         >
           <h1 className="text-[30px] md:text-[100px] font-bold leading-none">

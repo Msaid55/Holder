@@ -2,8 +2,10 @@ import { BsTelephone } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
 import { FaInstagram } from "react-icons/fa";
 import { LuYoutube } from "react-icons/lu";
+import UseScrollReveal from "./UseScrollReveal";
 
 export default function ChefHeader({ chef }) {
+  UseScrollReveal();
   return (
     <div className="flex flex-col md:flex-row items-stretch gap-10 ">
 
@@ -34,7 +36,7 @@ export default function ChefHeader({ chef }) {
       </div>
 
       {/* TEXT SECTION */}
-      <div className="flex flex-col justify-start  gap-4">
+      <div className="flex flex-col reveal justify-start  gap-4">
         <h2 className="text-[30px] font-bold text-black">
           {chef.name}
         </h2>
