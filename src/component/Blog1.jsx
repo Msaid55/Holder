@@ -3,9 +3,10 @@ import Group83 from "../images/Group83.svg";
 import Rectangle82 from "../images/Rectangle82.svg";
 import Rectangle83 from "../images/Rectangle83.svg";
 import Rectangle84 from "../images/Rectangle84.svg";
- 
+ import UseScrollReveal from "./UseScrollReveal";
 
 export default function Blog1() {
+    UseScrollReveal();
     const blogs = [
         {
             img: Rectangle82,
@@ -40,7 +41,7 @@ export default function Blog1() {
             <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-16">
 
                 {/* العنوان */}
-                <div className="flex flex-col items-center gap-1 mb-12">
+                <div className="flex flex-col reveal items-center gap-1 mb-12">
                     <h1 className="text-[#007a59] text-[30px] sm:text-[26px] md:text-[28px] font-bold">
                         Blog
                     </h1>
@@ -48,7 +49,7 @@ export default function Blog1() {
                 </div>
 
                 {/* الكاردات */}
-                <div className="flex flex-wrap gap-5 justify-between">
+                <div className="flex flex-wrap gap-5 reveal justify-between">
                     {blogs.map((blog, index) => (
                          <div
                             key={index}

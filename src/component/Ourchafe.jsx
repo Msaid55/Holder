@@ -3,8 +3,10 @@ import Chaf1 from "../images/Chaf1.svg";
 import MaleChafe from "../images/MaleChafe.svg";
 import GirlChafe from "../images/GirlChafe.svg";
 import Group48 from "../images/Group48.svg";
+import UseScrollReveal from "./UseScrollReveal";
 
 export default function Ourchafe() {
+  UseScrollReveal();
   const chefs = [
     {
       name: "Owen Grant",
@@ -35,7 +37,7 @@ export default function Ourchafe() {
       <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-16">
 
         {/* العنوان */}
-        <div className="flex justify-center mb-12">
+        <div className="flex reveal justify-center mb-12">
           <div className="flex flex-col items-center gap-1">
             <h1 className="text-[#007a59] text-[22px] sm:text-[26px] md:text-[28px] font-semibold">
               Our Chafe
@@ -45,7 +47,7 @@ export default function Ourchafe() {
         </div>
 
         {/* الكروت - Flex */}
-        <div className="flex justify-between gap-5 flex-wrap">
+        <div className="flex reveal justify-between gap-5 flex-wrap">
 
           {chefs.map((chef, index) => (
             <div key={index} className="relative group transition-all duration-500">

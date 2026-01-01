@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Group83 from "../images/Group83.svg";
-
+import UseScrollReveal from "./UseScrollReveal";
 export default function FAQ() {
+  UseScrollReveal();
   const faqs = [
     {
       question: "What are the opening hours?",
@@ -45,7 +46,7 @@ export default function FAQ() {
       <div className="max-w-3xl mx-auto px-4">
 
         {/* العنوان */}
-        <div className="flex flex-col items-center gap-2 mb-10">
+        <div className="flex flex-col items-center reveal gap-2 mb-10">
           <h2 className="text-[#007a59] text-[30px] md:text-[26px] font-semibold">
             FAQ
           </h2>
@@ -53,7 +54,7 @@ export default function FAQ() {
         </div>
 
         {/* الأسئلة */}
-        <div className="flex flex-col gap-4">
+        <div className="flex reveal flex-col gap-4">
           {faqs.map((faq, index) => (
             <div
               key={index}

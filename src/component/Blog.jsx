@@ -3,10 +3,11 @@ import StandardHeader from './StandardHeader'
 import Group142 from "../images/Group142.svg";
 import BlogStacked from './BlogStacked';
 import Footer from './Footer';
-
+import UseScrollReveal from "./UseScrollReveal";
 
 
 export default function Blog() {
+    UseScrollReveal();
     return (
         <div className='bg-white'>
             <StandardHeader />
@@ -20,6 +21,7 @@ export default function Blog() {
                     flex flex-col items-center justify-center 
                     text-white 
                     pointer-events-none mt-10 md:mt-0
+                    reveal
                    
                   "
             >
