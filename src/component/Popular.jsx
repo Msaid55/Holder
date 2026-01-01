@@ -7,8 +7,10 @@ import itms30 from "../images/itms30.svg";
 import Itms31 from "../images/Itms31.svg";
 import Eitms33 from "../images/Eitms33.svg";
 import Kiwifruit34 from "../images/Kiwifruit34.svg";
+import UseScrollReveal from "./UseScrollReveal";
 
 export default function PopularItems() {
+  UseScrollReveal();
   const items = [
     {
       title: "Caesar Salad",
@@ -38,7 +40,7 @@ const [visibleCount, setVisibleCount] = useState(4);
     <div className="popular-wrapper w-full">
       <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-10">
         {/* العنوان + الدكورات + النقاط على اليمين */}
-        <div className="popular-header flex justify-center mb-28">
+        <div className="popular-header reveal flex justify-center mb-28">
           <div className="flex flex-col items-center justify-center gap-1">
             <h1 className="text-[#007a59] text-[30px] sm:text-[26px] md:text-[28px] font-bold text-center">
               Popular Items
@@ -58,6 +60,7 @@ const [visibleCount, setVisibleCount] = useState(4);
               xl:grid-cols-4 
               gap-6 
               mt-10
+              reveal
             "
           >
             {items.slice(0, visibleCount).map((item, index) => (

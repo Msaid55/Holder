@@ -1,8 +1,11 @@
 import { useEffect, useState, useRef } from "react";
 import Group83 from "../images/Group83.svg";
 import Ellipse from "../images/Ellipse.svg";
+import UseScrollReveal from "./UseScrollReveal";
+
 
 export default function About() {
+    UseScrollReveal();
     // ---------------- COUNTER FUNCTION ----------------
     function Counter({ end, startCounting }) {
         const [value, setValue] = useState(0);
@@ -62,7 +65,7 @@ export default function About() {
             <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-10">
                 <section
                     ref={sectionRef}
-                    className="
+                    className=" reveal
             flex flex-col-reverse md:flex-row
             items-center md:items-start
             gap-10 md:gap-16
@@ -70,7 +73,7 @@ export default function About() {
                 >
                     {/* LEFT CIRCLE IMAGE (mobile: bottom, desktop: left) */}
                     <div
-                        className="
+                        className="reveal
               w-[290px] h-[290px]
               sm:w-[320px] sm:h-[320px]
               md:w-[380px] md:h-[380px]
@@ -89,7 +92,7 @@ export default function About() {
 
                     {/* RIGHT TEXT AREA (mobile: top full card) */}
                     <div
-                        className="
+                        className=" reveal
               w-full md:max-w-[590px]
               bg-white 
               rounded-md 

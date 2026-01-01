@@ -9,7 +9,9 @@ import AboutUs from "./component/AboutUs";
 import SplashLoader from "./component/SplashLoader";
 import Login from "./component/Login";
 import Register from "./component/Register";
-import Cart from "./component/Cart";
+import ItemsDetails from "./component/ItemsDetails";
+import SmoothScroll from "./component/SmoothScroll";
+
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -26,6 +28,7 @@ export default function App() {
   if (loading) return <SplashLoader />;
 
   return (
+    <SmoothScroll>
     <div className="bg-white">
       <main>
         <Routes>
@@ -34,7 +37,8 @@ export default function App() {
           <Route path="/booking" element={<Booking />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/ItemsDetails" element={<ItemsDetails />} />
+          
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
@@ -42,5 +46,6 @@ export default function App() {
         </Routes>
       </main>
     </div>
+    </SmoothScroll>
   );
 }

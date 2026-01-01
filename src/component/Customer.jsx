@@ -10,7 +10,7 @@ import Ellipse1 from "../images/Ellipse1.svg";
 import Ellipse2 from "../images/Ellipse2.svg";
 import Ellipse3 from "../images/Ellipse3.svg";
 import Ellipse4 from "../images/Ellipse4.svg";
-
+import UseScrollReveal from "./UseScrollReveal";
 
 
 const data = [
@@ -53,6 +53,7 @@ const data = [
 ];
 
 export default function Customer() {
+  UseScrollReveal();
   const trackRef = useRef(null);
 
   const scrollByCard = (dir = 1) => {
@@ -80,7 +81,7 @@ export default function Customer() {
         </div>
 
         {/* Desktop: carousel */}
-        <div className="hidden md:block mt-10">
+        <div className="hidden reveal md:block mt-10">
           <div className="flex justify-end gap-3 mb-4">
             <button
               onClick={() => scrollByCard(-1)}
@@ -156,7 +157,7 @@ export default function Customer() {
         </div>
 
         {/* Mobile: stacked cards */}
-        <div className="md:hidden mt-10 space-y-10">
+        <div className="md:hidden reveal mt-10 space-y-10">
           {data.map((c, i) => (
             <div key={i} className="text-white">
               <div className="rounded-2xl overflow-hidden shadow-xl">

@@ -6,9 +6,11 @@ import Capa from "../assets/Capa.svg";
 import { TfiTwitter } from "react-icons/tfi";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import UseScrollReveal from "./UseScrollReveal";
 export default function Footer() {
+  UseScrollReveal();
   return (
-    <footer className="w-full pt-20">
+    <footer className="w-full reveal pt-20">
       <div className="max-w-8xl mx-auto hpx-4 md:px-8 lg:px-16 relative">
 
         {/* البوكس الكبير */}

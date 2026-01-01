@@ -26,9 +26,10 @@ import Desirt6 from "../images/Desirt6.svg";
 import Desirt7 from "../images/Desirt7.svg";
 import Desirt8 from "../images/Desirt8.svg";
 import { Link } from "react-router-dom";
-
+import UseScrollReveal from "./UseScrollReveal";
 
 export default function Allitems({ activeTab = "Break Fast" }) {
+  UseScrollReveal();
   const items = [
     // Break Fast (8)
     { title: "Croissant", price: "$55", img: Meat1, category: "Break Fast" },
@@ -81,7 +82,7 @@ export default function Allitems({ activeTab = "Break Fast" }) {
     { title: "Pancakes", price: "$40", img: Meal3, category: "Burger" },
 
     // Drinks (مثال)
-    { title: "Virgin Mojito", price: "$15", img:Drink1, category: "Drinks" },
+    { title: "Virgin Mojito", price: "$15", img: Drink1, category: "Drinks" },
     { title: "Lemon Juice", price: "$12", img: Drink2, category: "Drinks" },
     { title: "Lemon Juice", price: "$12", img: Drink3, category: "Drinks" },
     { title: "Lemon Juice", price: "$12", img: Drink4, category: "Drinks" },
@@ -119,6 +120,7 @@ export default function Allitems({ activeTab = "Break Fast" }) {
               xl:grid-cols-4 
               gap-6 
               mt-10
+              reveal
             "
           >
             {filteredItems.map((item, index) => (
@@ -142,7 +144,9 @@ export default function Allitems({ activeTab = "Break Fast" }) {
                 ></div>
 
                 {/* الصورة */}
-                <NavLink to="/Cart" className="relative z-20 flex justify-center">
+                <NavLink to="/ItemsDetails"
+                  state={{ item, items }}
+                  className="relative z-20 flex justify-center">
                   <img
                     src={item.img}
                     alt={item.title}
@@ -155,7 +159,7 @@ export default function Allitems({ activeTab = "Break Fast" }) {
                 </NavLink>
 
                 {/* جسم الكارد */}
-                <div className="relative z-30 mt-14">
+                <div className="relative  z-30 mt-14">
                   <div className="flex items-center justify-between w-[230px] h-[45px]">
                     <h3 className="text-[20px] font-bold text-[#111]">
                       {item.title}
@@ -174,20 +178,20 @@ export default function Allitems({ activeTab = "Break Fast" }) {
                   </div>
 
                   <div className="flex items-center justify-between mt-5">
-                  <Link
-  to="/cart"
-  state={{ item, items }}
->
-  <button
-    className="
+                    <Link
+                      to="#"
+                      state={{ item, items }}
+                    >
+                      <button
+                        className="
       px-8 py-2.5 rounded-full bg-[#007a59] text-white 
       text-[16px] font-semibold transition duration-200 
       hover:bg-[#036149]
     "
-  >
-    Order Now
-  </button>
-</Link>
+                      >
+                        Order Now
+                      </button>
+                    </Link>
 
 
                     <button
@@ -208,7 +212,7 @@ export default function Allitems({ activeTab = "Break Fast" }) {
           </div>
 
           {/* زرار زي ما هو */}
-          <div className="flex justify-center mt-10">
+          <div className="flex reveal justify-center mt-10">
             <a
               href="/all-items"
               className="
