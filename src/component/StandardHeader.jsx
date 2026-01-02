@@ -69,7 +69,7 @@ export default function StandardHeader() {
           className={[
             "w-full z-50 transition-all duration-300",
             isFixed
-              ? "fixed top-0 left-0 bg-white/70 backdrop-blur-md shadow-md"
+              ? "md:fixed top-0 left-0 bg-white/70 backdrop-blur-md shadow-md"
               : "relative bg-transparent",
           ].join(" ")}
         >
