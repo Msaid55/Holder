@@ -12,6 +12,9 @@ import Register from "./component/Register";
 import ItemsDetails from "./component/ItemsDetails";
 import SmoothScroll from "./component/SmoothScroll";
 import Cart from "./component/Cart";
+import ScrollToTop from "./component/ScrollToTop";
+import UseScrollReveal from "./component/UseScrollReveal";
+import ChatBot from "./component/ChatBot";
 
 
 export default function App() {
@@ -46,7 +49,11 @@ export default function App() {
           },
         }}
       />
+      <ChatBot />
+       
       <main>
+        <ScrollToTop />
+      <UseScrollReveal/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />

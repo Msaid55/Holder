@@ -51,7 +51,7 @@ export default function Header() {
         className={[
           "w-full transition-all duration-300",
           isSticky
-            ? "fixed top-0 left-0 z-[9999] bg-white/70 backdrop-blur-md shadow-sm"
+            ? "md:fixed top-0 left-0 z-[9999] bg-white/70 backdrop-blur-md shadow-sm"
             : "relative bg-transparent",
         ].join(" ")}
       >
