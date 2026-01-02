@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import StandardHeader from "./StandardHeader";
 import Group48 from "../images/Group48.svg";
 import ItemsCounter from "./ItemsCounter";
+import Footer from "./Footer";
 
 export default function ItemsDetails() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
   return (
     <div className="bg-white relative">
       <StandardHeader />
@@ -31,6 +36,7 @@ export default function ItemsDetails() {
       </div>
 
       <ItemsCounter />
+      <Footer />
     </div>
   );
 }

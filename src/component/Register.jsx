@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FiUser, FiMail, FiLock, FiEye, FiEyeOff } from "react-icons/fi";
-
+import UseScrollReveal from "./UseScrollReveal";
 export default function Register() {
+  UseScrollReveal();
   const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
@@ -48,7 +49,7 @@ export default function Register() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-12">
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Left side */}
-          <div className="hidden lg:block">
+          <div className="hidden reveal lg:block">
             <div className="rounded-3xl p-10 bg-[#fbf3e6] border border-black/5 shadow-sm">
               <h2 className="text-[42px] font-extrabold leading-tight text-[#007a59]">
                 Create Account ✨
@@ -76,7 +77,7 @@ export default function Register() {
           </div>
 
           {/* Right side (Form) */}
-          <div className="w-full">
+          <div className="w-full reveal">
             <div className="w-full max-w-[520px] mx-auto bg-white rounded-3xl shadow-[0_14px_40px_rgba(0,0,0,0.06)] border border-black/5 p-7 sm:p-10">
               <div className="flex flex-col items-center text-center">
                 <h1 className="text-[28px] sm:text-[32px] font-extrabold text-[#007a59]">
