@@ -67,10 +67,10 @@ export default function Hero1() {
                            slide-left opacity-0"
                 style={{ animationDelay: ".4s" }}
               >
-                <button className="w-[145px] h-[46px] bg-[#065B5E] flex items-center justify-center text-[#Ffff] rounded-full text-[18px] md:text-[22px] shadow-[#b3becc]">
+                <NavLink to="/Menu"  className="transition-all duration-300 delay-200 hover:scale-110 hover:shadow-lg  w-[145px] h-[46px] bg-[#065B5E] flex items-center justify-center text-[#Ffff] rounded-full text-[18px] md:text-[22px] shadow-[#b3becc]">
                   Order Now
-                </button>
-                <NavLink to="/Register"  className="w-[109px] h-[46px] bg-[#ffff] flex items-center justify-center text-[#FF4033] rounded-full text-[18px] md:text-[22px] border-[#FF4033] border-2 shadow-[#b3becc]">
+                </NavLink>
+                <NavLink to="/Register"  className="transition-all duration-300 delay-200 hover:scale-110 hover:shadow-lg w-[109px] h-[46px] bg-[#ffff] flex items-center hover:bg-[#FF4033] hover:text-white justify-center text-[#FF4033] rounded-full text-[18px] md:text-[22px] border-[#FF4033] border-2 shadow-[#b3becc]">
                   Sign Up  
                 </NavLink>
               </div>

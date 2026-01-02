@@ -221,7 +221,7 @@ export default function Allitems({ activeTab = "Break Fast" }) {
 
           <div className="flex reveal justify-center mt-10">
             <a
-              href="/all-items"
+              href="/Menu"
               className="
                 px-12 py-3 rounded-full 
                 bg-[#FF4033] text-white 
