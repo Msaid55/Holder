@@ -57,9 +57,11 @@ export default function Cart() {
   return (
     <div className="bg-white relative">
       <StandardHeader />
+      
 
       <section className="w-full bg-white py-14">
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+          
           <div className="flex items-start justify-between gap-6 flex-col md:flex-row">
             {/* LEFT - Items */}
             <div className="w-full md:flex-1">
@@ -206,7 +208,7 @@ export default function Cart() {
                       ? "bg-[#007a59] hover:bg-[#036149]"
                       : "bg-[#007a59]/50 cursor-not-allowed",
                   ].join(" ")}
-                  onClick={() => alert("Checkout (later)")}
+                 onClick={() => navigate("/Checkout")}
                 >
                   Checkout
                 </button>
