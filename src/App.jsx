@@ -15,7 +15,7 @@ import Cart from "./component/Cart";
 import ScrollToTop from "./component/ScrollToTop";
 import UseScrollReveal from "./component/UseScrollReveal";
 import ChatBot from "./component/ChatBot";
-
+import Checkout from "./component/Checkout";
 
 export default function App() {
 
@@ -62,7 +62,7 @@ export default function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/ItemsDetails" element={<ItemsDetails />} />
           <Route path="/cart" element={<Cart />} />
-
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
