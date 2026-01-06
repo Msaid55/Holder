@@ -3,6 +3,7 @@ import StandardHeader from "./StandardHeader";
 import Group48 from "../images/Group48.svg";
 import ItemsCounter from "./ItemsCounter";
 import Footer from "./Footer";
+import FoodBenefits from "./FoodBenefits";
 
 export default function ItemsDetails() {
   useEffect(() => {
@@ -36,6 +37,7 @@ export default function ItemsDetails() {
       </div>
 
       <ItemsCounter />
+      <FoodBenefits />
       <Footer />
     </div>
   );
