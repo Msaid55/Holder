@@ -1,10 +1,7 @@
 import React from "react";
 import StandardHeader from "./StandardHeader";
 import Group48 from "../images/Group48.svg";
-feature/Comments
-import ChefSlider from "./ChefSlider";  
-   
- main
+import ChefSlider from "./ChefSlider";   
 import Footer from "./Footer"; 
 import UseScrollReveal from "./UseScrollReveal"; 
 
@@ -24,12 +21,6 @@ export default function AboutUs() {
         <img src={Group48} alt="" className="mt-6 md:w-[215px] w-[65px] h-[6px]"
         />
       </div>
-
-  feature/Comments
-      {/*  Section Chefs */}
- 
-      {/* Section Chefs */}
-  main
        
         <ChefSlider />
         <Footer />
