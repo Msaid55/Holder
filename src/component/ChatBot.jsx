@@ -143,13 +143,7 @@ export default function ChatBot() {
       {/* Floating Button */}
       <button
         onClick={() => setOpen((p) => !p)}
-        className="
-          fixed bottom-5 right-5 z-[9999]
-          w-14 h-14 rounded-full
-          bg-emerald-700 text-white
-          flex items-center justify-center
-          shadow-lg hover:scale-110 transition
-        "
+        className=" fixed bottom-5 right-5 z-[9999] w-14 h-14 rounded-full bg-emerald-700 text-white flex items-center justify-center shadow-lg hover:scale-110 "
         aria-label="Chat"
       >
         {open ? <FiX size={24} /> : <LuBotMessageSquare size={24} />}
@@ -220,13 +214,7 @@ export default function ChatBot() {
                 <button
                   key={q.action}
                   onClick={() => handleQuick(q.action)}
-                  className="
-                    text-[12px] px-3 py-1.5 rounded-full
-                    text-black
-                    bg-white border border-emerald-200
-                    hover:bg-emerald-700 hover:text-white hover:border-emerald-700
-                    transition flex items-center gap-2
-                  "
+                  className=" text-[12px] px-3 py-1.5 rounded-full text-black bg-white border border-emerald-200 hover:bg-emerald-700 hover:text-white hover:border-emerald-700 transition flex items-ce"
                 >
                   {q.icon}
                   <span>{q.label}</span>
@@ -245,21 +233,12 @@ export default function ChatBot() {
                   if (e.key === "Enter") handleSend();
                 }}
                 placeholder="Type a message..."
-                className="
-                  flex-1 h-11 px-4 rounded-full
-                  border border-gray-200 outline-none
-                  focus:border-emerald-700
-                "
+                className=" flex-1 h-11 px-4 rounded-full border border-gray-200 outline-none focus:border-emerald-700"
               />
 
               <button
                 onClick={() => handleSend()}
-                className="
-                  w-11 h-11 rounded-full
-                  bg-emerald-700 text-white
-                  flex items-center justify-center
-                  hover:scale-110 transition
-                "
+                className=" w-11 h-11 rounded-full bg-emerald-700 text-white flex items-center justify-center hover:scale-110 transition"
                 aria-label="Send"
               >
                 <FiSend />

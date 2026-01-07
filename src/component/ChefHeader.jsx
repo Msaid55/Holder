@@ -36,7 +36,7 @@ export default function ChefHeader({ chef }) {
       </div>
 
       {/* TEXT SECTION */}
-      <div className="flex flex-col reveal justify-start  gap-4">
+      <div className="flex flex justify-start  gap-4">
         <h2 className="text-[30px] font-bold text-black">
           {chef.name}
         </h2>
@@ -57,14 +57,7 @@ export default function ChefHeader({ chef }) {
               (icon, i) => (
                 <div
                   key={i}
-                  className="
-                    w-10 h-10
-                    rounded-full
-                    bg-[#007A59]
-                    text-white
-                    flex items-center justify-center
-                    hover:scale-110 transition
-                  "
+                  className=" w-10 h-10 rounded-full bg-[#007A59] text-white flex items-center justify-center hover:scale-110 transition"
                 >
                   {icon}
                 </div>

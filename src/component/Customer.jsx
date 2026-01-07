@@ -99,26 +99,17 @@ export default function Customer() {
 
           <div
             ref={trackRef}
-            className="
-              flex gap-6 overflow-x-auto scroll-smooth
-              pb-6
-              [scrollbar-width:none] [-ms-overflow-style:none]
-            "
+            className=" flex gap-6 overflow-x-auto scroll-smooth pb-6 [scrollbar-width:none] [-ms-overflow-style:none] "
             style={{ WebkitOverflowScrolling: "touch" }}
           >
             {/* hide scrollbar (webkit) */}
-            <style>{`
-              .hideScroll::-webkit-scrollbar{display:none;}
-            `}</style>
+            <style>{`.hideScroll::-webkit-scrollbar{display:none;}`}</style>
 
             {data.map((c, i) => (
               <div
                 key={i}
                 data-card="1"
-                className="
-                  min-w-[360px] max-w-[360px]
-                  text-white
-                "
+                className=" min-w-[360px] max-w-[360px] text-white"
               >
                 <div className="rounded-2xl overflow-hidden shadow-xl">
                   <img

@@ -31,22 +31,12 @@ export default function UserMenu() {
       <button
         type="button"
         onClick={() => setOpen((p) => !p)}
-        className="
-          flex items-center gap-2
-          px-4 py-2 rounded-full
-          border border-[#007a59] 
-          text-black
-           hover:scale-110 transition
-        "
+        className=" flex items-center gap-2 px-4 py-2 rounded-full border border-[#007a59]  text-black  hover:scale-110 transition"
       >
         {/* <span className="font-semibold">User</span> */}
 
         <span
-          className="
-            w-9 h-9 rounded-full
-            bg-emerald-700 text-white
-            flex items-center justify-center
-          "
+          className=" w-9 h-9 rounded-full bg-emerald-700 text-white flex items-center justify-center"
         >
           <FiUser size={18} />
         </span>
@@ -60,23 +50,12 @@ export default function UserMenu() {
       {/* Dropdown */}
       {open && (
         <div
-          className="
-            absolute right-0 mt-2 w-48
-            rounded-md overflow-hidden
-            bg-black/90 backdrop-blur
-            shadow-xl border
-            z-50
-          "
+          className=" absolute right-0 mt-2 w-48 rounded-md overflow-hidden bg-black/90 backdrop-blur shadow-xl border z-50"
         >
           <Link
             to="/login"
             onClick={() => setOpen(false)}
-            className="
-              block px-5 py-3
-              text-black font-semibold
-              bg-emerald-700 hover:text-black
-              transition
-            "
+            className=" block px-5 py-3 text-black font-semibold bg-emerald-700 hover:text-black transition"
           >
             Login
           </Link>
@@ -84,12 +63,7 @@ export default function UserMenu() {
           <Link
             to="/register"
             onClick={() => setOpen(false)}
-            className="
-              block px-5 py-3
-              text-emerald-700 font-semibold
-              hover:bg-emerald-700 hover:text-black
-              transition
-            "
+            className=" block px-5 py-3 text-emerald-700 font-semibold hover:bg-emerald-700 hover:text-black transition"
           >
             Sign up
           </Link>

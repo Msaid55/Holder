@@ -13,9 +13,10 @@ import ItemsDetails from "./component/ItemsDetails";
 import SmoothScroll from "./component/SmoothScroll";
 import Cart from "./component/Cart";
 import ScrollToTop from "./component/ScrollToTop";
-import UseScrollReveal from "./component/UseScrollReveal";
+
 import ChatBot from "./component/ChatBot";
 import Checkout from "./component/Checkout";
+import ScrollRevealManager from "./component/ScrollRevealManager";
 
 export default function App() {
 
@@ -53,7 +54,7 @@ export default function App() {
        
       <main>
         <ScrollToTop />
-      <UseScrollReveal/>
+      <ScrollRevealManager />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
