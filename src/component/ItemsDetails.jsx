@@ -4,8 +4,13 @@ import Group48 from "../images/Group48.svg";
 import ItemsCounter from "./ItemsCounter";
 import Footer from "./Footer";
 import FoodBenefits from "./FoodBenefits";
+import { useLocation } from "react-router-dom";
+import ProductReviews from "./ProductReviews"; // ✅ add this
 
 export default function ItemsDetails() {
+  const location = useLocation();
+  const selected = location.state?.item; // ✅ the item you opened
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, []);
@@ -38,6 +43,15 @@ export default function ItemsDetails() {
 
       <ItemsCounter />
       <FoodBenefits />
+
+      {/* ✅ Reviews section */}
+      {selected && (
+        <ProductReviews
+          productId={`${selected.category}-${selected.title}`.replaceAll(" ", "")}
+          productName={selected.title}
+        />
+      )}
+
       <Footer />
     </div>
   );
