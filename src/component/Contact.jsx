@@ -66,7 +66,7 @@ export default function Contact() {
               />
 
               <div className="space-y-6 mt-4 lg:mt-70">
-
+                {/* Contant */}
                 <div>
                   <h3 className="font-bold text-[22px] md:text-[25px]">
                     Address

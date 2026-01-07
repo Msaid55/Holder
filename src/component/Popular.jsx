@@ -11,6 +11,7 @@ import Kiwifruit34 from "../images/Kiwifruit34.svg";
 import UseScrollReveal from "./UseScrollReveal";
 import toast from "react-hot-toast";
 import { addToCart } from "./useCart";
+import { MdOutlineStar } from "react-icons/md";
 
 export default function PopularItems() {
   UseScrollReveal();
@@ -28,7 +29,7 @@ export default function PopularItems() {
   const [visibleCount] = useState(4);
 
   const handleOrderNow = (product) => {
-    addToCart(product, 1); // ✅ بيكتب في localStorage + dispatch cart_updated
+    addToCart(product, 1); //  localStorage + dispatch cart_updated
     toast.success(`${product.title} added to cart 🛒`);
   };
 
@@ -82,21 +83,21 @@ export default function PopularItems() {
                 <div className="flex gap-1 mt-1">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <span key={i} className="text-[#ffb400] text-[14px]">
-                      ★
+                      <MdOutlineStar />
                     </span>
                   ))}
                 </div>
 
                 <div className="flex items-center justify-between mt-5">
-                  {/* ✅ Order Now -> add only */}
+                  {/*  Order Now -> add only */}
                   <button
                     onClick={() => handleOrderNow(item)}
                     className=" px-8 py-2.5 rounded-full bg-[#007a59] text-white  text-[16px] font-semibold transition duration-200  hover:bg-[#036149]"
                   >
-                    Order Now
+                   Add To Cart
                   </button>
 
-                  {/* ✅ cart icon -> cart page */}
+                  {/*  cart icon -> cart page */}
                   <Link
                     to="/cart"
                     className=" w-[45px] h-[45px] rounded-full border border-[#FF4033]  text-[#FF4033] flex items-center justify-center  transition-all duration-200 cursor-pointer hover:bg-[#FF4033] hover:text-white hover:scale-110"

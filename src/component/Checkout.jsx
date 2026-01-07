@@ -50,13 +50,13 @@ export default function Checkout() {
   const placeOrder = () => {
     if (!validate()) return;
 
-    // ✅ simulate order success
+    // simulate order success
     toast.success("Order placed successfully ✅");
 
-    // ✅ clear cart after order
+    // clear cart after order
     writeCart([]);
 
-    // ✅ go home or menu
+    // go home or menu
     setTimeout(() => navigate("/"), 800);
   };
 

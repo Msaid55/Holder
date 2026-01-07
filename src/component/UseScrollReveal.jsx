@@ -37,8 +37,14 @@ export default function UseScrollReveal() {
     return () => {
       cancelAnimationFrame(raf);
       try {
-        sr.clean(".reveal"); // تنظيف عند الخروج من الصفحة
+        sr.clean(".reveal");
       } catch {}
     };
+    feature/Comments
+  }, [location.pathname]); 
+
+  return null;
+
   }, [pathname]);
+ main
 }

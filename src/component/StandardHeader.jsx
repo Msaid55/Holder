@@ -27,10 +27,9 @@ export default function StandardHeader() {
       item.to === "/" ? pathname === "/" : pathname.startsWith(item.to.toLowerCase())
     ) || navItems[0];
 
-  // ✅ لما نعمل سكرول: الهيدر يبقى fixed
-  useEffect(() => {
+   useEffect(() => {
     const onScroll = () => {
-      setIsFixed(window.scrollY > 80); // غير الرقم لو عايزها أسرع/أبطأ
+      setIsFixed(window.scrollY > 80); 
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -59,12 +58,12 @@ export default function StandardHeader() {
 
   return (
     <div className="relative w-full">
-      {/* ✅ جزء الصورة + العنوان زي ما هو */}
+      {/* جزء الصورة + العنوان   */}
       <div className="relative h-[400px] overflow-hidden">
         <img src={BGitems} alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/50" />
 
-        {/* ✅ الهيدر نفسه */}
+        {/*الهيدر */}
         <header
           className={[
             "w-full z-50 transition-all duration-300",
@@ -73,7 +72,7 @@ export default function StandardHeader() {
               : "relative bg-transparent",
           ].join(" ")}
         >
-          {/* ✅ TOP BAR */}
+          {/* TOP BAR */}
           <div className="mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-[120px]">
             {/* LOGO */}
             <Link to="/" className="shrink-0">
@@ -142,7 +141,7 @@ export default function StandardHeader() {
             </div>
           </div>
 
-          {/* ✅ MOBILE DROPDOWN ROW */}
+          {/* MOBILE DROPDOWN ROW */}
           <div className="md:hidden px-4 pb-3">
             <div className="flex items-center gap-3">
               <button
@@ -160,7 +159,7 @@ export default function StandardHeader() {
             </div>
           </div>
 
-          {/* ✅ DROPDOWN MENU */}
+          {/* DROPDOWN MENU */}
           {mobileMenuOpen && (
             <div className="md:hidden px-4 pb-4 relative z-50">
               <div className="bg-white rounded-2xl text-black shadow-md border border-gray-100 overflow-hidden">
@@ -184,7 +183,7 @@ export default function StandardHeader() {
           )}
         </header>
 
-        {/* ✅ spacer عشان لما يبقى fixed مايغطيش المحتوى */}
+        {/* spacer عشان لما يبقى fixed مايغطيش المحتوى */}
         {isFixed && <div className="h-[120px]" />}
       </div>
     </div>

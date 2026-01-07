@@ -12,7 +12,7 @@ export default function Menu() {
   return (
     <div className="bg-white  w-full">
       <div className="">
-      {/* Hero فقط */}
+      {/* Hero */}
       <div className="relative">
         <StandardHeader />
 
@@ -27,7 +27,7 @@ export default function Menu() {
         </div>
       </div>
 
-      {/* Tabs + Items تحت الهيرو */}
+      {/* Tabs + Items */}
       <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16">
         <Header2 active={activeTab} setActive={setActiveTab} />
       <Allitems activeTab={activeTab} />

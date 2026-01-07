@@ -33,8 +33,8 @@ export default function Register() {
       return;
     }
 
-    // ✅ هنا هتربطي باك اند بعدين
-    // دلوقتي هنوديه لصفحة اللوجين
+    //  هنا هنربط باك اند بعدين
+    // دلوقتي هنروح لصفحة اللوجين
     navigate("/login");
   };
 
@@ -90,7 +90,7 @@ export default function Register() {
               </div>
 
               <form onSubmit={onSubmit} className="mt-8 space-y-4">
-                {/* Full Name */}
+                 
                 <div>
                   <label className="text-sm font-semibold text-gray-700">
                     Full Name

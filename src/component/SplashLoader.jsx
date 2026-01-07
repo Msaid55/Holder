@@ -1,7 +1,6 @@
 import React from "react";
-import Capa from "../assets/Capa.svg"; // لو عندك لوجو
-// لو مش عايزه لوجو احذفي السطر ده واستبدلي img بديف
-
+import Capa from "../assets/Capa.svg"; 
+ 
 export default function SplashLoader() {
   return (
     <div className="fixed inset-0 z-[9999] bg-white flex items-center justify-center px-4">

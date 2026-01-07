@@ -42,7 +42,7 @@ export default function ChatBot() {
 
   const [messages, setMessages] = useState([welcomeMessage]);
 
-  // ✅ Clear chat
+  // Clear chat
   const handleClearChat = () => {
     const ok = window.confirm("Do you want to clear the chat?");
     if (!ok) return;
@@ -62,7 +62,7 @@ export default function ChatBot() {
 
     const go = (path) => setTimeout(() => navigate(path), 350);
 
-    // ✅ CONTACT INFO
+    // CONTACT INFO
     if (
       t.includes("contact") ||
       t.includes("phone") ||

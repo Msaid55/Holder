@@ -5,11 +5,11 @@ import ItemsCounter from "./ItemsCounter";
 import Footer from "./Footer";
 import FoodBenefits from "./FoodBenefits";
 import { useLocation } from "react-router-dom";
-import ProductReviews from "./ProductReviews"; // ✅ add this
+import ProductReviews from "./ProductReviews";  
 
 export default function ItemsDetails() {
   const location = useLocation();
-  const selected = location.state?.item; // ✅ the item you opened
+  const selected = location.state?.item;  
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -36,7 +36,7 @@ export default function ItemsDetails() {
       <ItemsCounter />
       <FoodBenefits />
 
-      {/* ✅ Reviews section */}
+      {/* Reviews section */}
       {selected && (
         <ProductReviews
           productId={`${selected.category}-${selected.title}`.replaceAll(" ", "")}

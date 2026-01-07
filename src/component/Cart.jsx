@@ -11,15 +11,15 @@ export default function Cart() {
   const [cart, setCart] = useState([]);
   const navigate = useNavigate();
 
-  // ✅ load once from useCart
+  //  load once from useCart
   useEffect(() => {
     setCart(readCart());
   }, []);
 
-  // ✅ helpers
+  // helpers
   const sync = (nextCart) => {
     setCart(nextCart);
-    writeCart(nextCart); // ✅ saves + dispatch cart_updated
+    writeCart(nextCart); // saves + dispatch cart_updated
   };
 
   const inc = (id) => {
@@ -43,7 +43,7 @@ export default function Cart() {
 
   const clearAll = () => sync([]);
 
-  // ✅ totals
+  //  totals
   const subtotal = useMemo(() => {
     return cart.reduce((sum, it) => {
       const priceNum = Number(String(it.price).replace("$", "")) || 0;
