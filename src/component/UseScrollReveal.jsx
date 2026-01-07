@@ -32,7 +32,7 @@ export default function UseScrollReveal() {
     return () => {
       window.removeEventListener("reveal_refresh", handleRefresh);
     };
-  }, [location.pathname]); // 👈 مهم جداً
+  }, [location.pathname]); 
 
   return null;
 }

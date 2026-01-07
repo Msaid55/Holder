@@ -5,8 +5,8 @@ export default function SmoothScroll({ children }) {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
-      smoothWheel: true,    // ✅ Desktop
-      smoothTouch: true,    // ✅ Mobile
+      smoothWheel: true,    // Desktop
+      smoothTouch: true,    // Mobile
       touchMultiplier: 1.2,
       wheelMultiplier: 1,
     });

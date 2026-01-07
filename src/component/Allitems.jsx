@@ -29,6 +29,7 @@ import Desirt8 from "../images/Desirt8.svg";
 import UseScrollReveal from "./UseScrollReveal";
 import toast from "react-hot-toast";
 import { addToCart } from "./useCart";
+import { MdOutlineStar } from "react-icons/md";
 
 export default function Allitems({ activeTab = "Break Fast" }) {
   UseScrollReveal();
@@ -167,7 +168,7 @@ export default function Allitems({ activeTab = "Break Fast" }) {
                     "
                   />
                 </NavLink>
-
+                    {/* contant */}
                 <div className="relative z-30 mt-14">
                   <div className="flex items-center justify-between w-[230px] h-[45px]">
                     <h3 className="text-[20px] font-bold text-[#111]">
@@ -177,17 +178,17 @@ export default function Allitems({ activeTab = "Break Fast" }) {
                       {item.price}
                     </div>
                   </div>
-
+                    {/* 5stars */}
                   <div className="flex gap-1 mt-1">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <span key={i} className="text-[#ffb400] text-[14px]">
-                        ★
+                        <MdOutlineStar />
                       </span>
                     ))}
                   </div>
 
                   <div className="flex items-center justify-between mt-5">
-                    {/* ✅ Order Now -> add only */}
+                    {/*  Order Now -> add only */}
                     <button
                       onClick={() => handleOrderNow(item)}
                       className="
@@ -196,10 +197,10 @@ export default function Allitems({ activeTab = "Break Fast" }) {
                         hover:bg-[#036149]
                       "
                     >
-                      Order Now
+                      Add To Cart
                     </button>
 
-                    {/* ✅ cart icon -> cart page */}
+                    {/* cart icon -> cart page */}
                     <Link
                       to="/cart"
                       className="
@@ -219,6 +220,7 @@ export default function Allitems({ activeTab = "Break Fast" }) {
             ))}
           </div>
 
+            {/* button see more go to menu */}
           <div className="flex reveal justify-center mt-10">
             <a
               href="/Menu"

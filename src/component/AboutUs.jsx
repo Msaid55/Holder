@@ -1,7 +1,7 @@
 import React from "react";
 import StandardHeader from "./StandardHeader";
 import Group48 from "../images/Group48.svg";
-import ChefSlider from "./ChefSlider"; // 👈 أضفناه
+import ChefSlider from "./ChefSlider";  
 import Footer from "./Footer"; 
 import UseScrollReveal from "./UseScrollReveal"; 
 
@@ -35,7 +35,7 @@ export default function AboutUs() {
         />
       </div>
 
-      {/* 👇 Section Chefs */}
+      {/*  Section Chefs */}
        
         <ChefSlider />
         <Footer />

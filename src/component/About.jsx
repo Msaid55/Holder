@@ -2,6 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import Group83 from "../images/Group83.svg";
 import Ellipse from "../images/Ellipse.svg";
 import UseScrollReveal from "./UseScrollReveal";
+import { MdOutlineStar } from "react-icons/md";
+
 
 
 export default function About() {
@@ -151,9 +153,9 @@ export default function About() {
                             </div>
 
                             {/* Counter 3 */}
-                            <div className="text-center md:text-left">
-                                <p className="text-3xl sm:text-4xl font-bold text-yellow-500">
-                                    <Counter end={5} startCounting={startCounting} />★
+                            <div className="text-center md:text-left ">
+                                <p className="text-3xl sm:text-4xl font-bold text-yellow-500 flex">
+                                    <Counter end={5} startCounting={startCounting} /><MdOutlineStar />
                                 </p>
                                 <p className="text-black text-xs sm:text-sm font-bold mt-1">
                                     Guest Experience

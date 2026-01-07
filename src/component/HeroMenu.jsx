@@ -13,7 +13,7 @@ export default function HeroMenu() {
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Overlay (اختياري – مهم للشكل) */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Header فوق الخلفية */}
