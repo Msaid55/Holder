@@ -18,18 +18,7 @@ export default function Menu() {
 
         {/* Centered Title */}
         <div
-          className="
-            absolute 
-            top-1/2 left-1/2 
-            -translate-x-1/2 -translate-y-1/2
-            z-30 
-            flex flex-col items-center justify-center 
-            text-white 
-            pointer-events-none
-            mt-20
-            md:mt-0
-            reveal
-          "
+          className=" absolute  top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2 z-30  flex flex-col items-center justify-center  text-white  pointer-events-none mt-20 md:mt-0 reveal"
         >
           <h1 className="text-[30px] md:text-[100px] font-bold leading-none">
             All Items
