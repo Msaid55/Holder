@@ -55,42 +55,22 @@ export default function Ourchafe() {
 
                 {/* صورة الشيف */}
                 <div
-                  className="
-                    absolute top-0 right-0 z-10
-                    transition-all duration-500
-                    group-hover:-translate-y-2
-                  "
+                  className=" absolute top-0 right-0 z-10 transition-all duration-500 group-hover:-translate-y-2"
                 >
                   <div
-                    className="
-                      relative w-[180px] h-[180px] bg-[#FFA000]
-                      rounded-2xl flex items-center justify-center
-                      shadow-lg transition-all duration-500
-                      group-hover:scale-105 overflow-hidden
-                    "
+                    className=" relative w-[180px] h-[180px] bg-[#FFA000] rounded-2xl flex items-center justify-center shadow-lg transition-all duration-500 group-hover:scale-105 overflow-hidden"
                   >
                     <img
                       src={chef.img}
                       alt={chef.name}
-                      className="
-                        absolute top-6
-                        w-[130px] h-[165px] object-contain
-                        transition-all duration-500
-                        group-hover:scale-110
-                      "
+                      className=" absolute top-6 w-[130px] h-[165px] object-contain transition-all duration-500 group-hover:scale-110"
                     />
                   </div>
                 </div>
 
                 {/* الكارد */}
                 <div
-                  className="
-                    bg-[#fafafa] rounded-2xl
-                    pt-16 pb-6 px-6 h-[260px]
-                    shadow-sm transition-all duration-500
-                    group-hover:shadow-lg
-                    w-full
-                  "
+                  className=" bg-[#fafafa] rounded-2xl pt-16 pb-6 px-6 h-[260px] shadow-sm transition-all duration-500 group-hover:shadow-lg w-full"
                 >
                   <h3 className="text-[26px] font-bold text-black leading-tight -mt-9">
                     {chef.name}

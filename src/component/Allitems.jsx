@@ -121,35 +121,15 @@ export default function Allitems({ activeTab = "Break Fast" }) {
       <div className="w-full">
         <div>
           <div
-            className="
-              grid 
-              grid-cols-1 
-              sm:grid-cols-2 
-              md:grid-cols-2 
-              lg:grid-cols-3 
-              xl:grid-cols-4 
-              gap-6 
-              mt-10
-              reveal
-            "
+            className=" grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10 reveal"
           >
             {filteredItems.map((item) => (
               <div
                 key={item.id}
-                className="
-                  relative bg-white rounded-3xl px-6 pt-8 pb-6 
-                  shadow-[0_14px_40px_rgba(0,0,0,0.05)] 
-                  overflow-visible group
-                "
+                className="relative bg-white rounded-3xl px-6 pt-8 pb-6  shadow-[0_14px_40px_rgba(0,0,0,0.05)]  overflow-visible group"
               >
                 <div
-                  className="
-                    absolute bottom-0 left-0 w-full h-[75%] 
-                    bg-[#e9f4f2] rounded-xl 
-                    origin-bottom scale-y-0 
-                    transition-all duration-300 ease-in-out 
-                    group-hover:scale-y-100
-                  "
+                  className="absolute bottom-0 left-0 w-full h-[75%]  bg-[#e9f4f2] rounded-xl origin-bottom scale-y-0 transition-all duration-300 ease-in-out group-hover:scale-y-100"
                 />
 
                 {/* image -> details */}
@@ -161,18 +141,14 @@ export default function Allitems({ activeTab = "Break Fast" }) {
                   <img
                     src={item.img}
                     alt={item.title}
-                    className="
-                      w-[212px] h-[213px] object-contain mt-[-40px]
-                      transition-all duration-300
-                      group-hover:-translate-y-2
-                    "
+                    className="w-[212px] h-[213px] object-contain mt-[-40px] transition-all duration-300 group-hover:-translate-y-2"
                   />
                 </NavLink>
                     {/* contant */}
                 <div className="relative z-30 mt-14">
                   <div className="flex items-center justify-between w-[230px] h-[45px]">
                     <h3 className="text-[20px] font-bold text-[#111]">
-                      {item.title}
+                    
                     </h3>
                     <div className="text-[18px] font-extrabold text-[#111]">
                       {item.price}
@@ -191,10 +167,7 @@ export default function Allitems({ activeTab = "Break Fast" }) {
                     {/*  Order Now -> add only */}
                     <button
                       onClick={() => handleOrderNow(item)}
-                      className="
-                        px-8 py-2.5 rounded-full bg-[#007a59] text-white 
-                        text-[16px] font-semibold transition duration-200 
-                        hover:bg-[#036149]
+                      className="px-8 py-2.5 rounded-full bg-[#007a59] text-white text-[16px] font-semibold transition duration-200  hover:bg-[#036149]
                       "
                     >
                       Add To Cart
@@ -203,11 +176,7 @@ export default function Allitems({ activeTab = "Break Fast" }) {
                     {/* cart icon -> cart page */}
                     <Link
                       to="/cart"
-                      className="
-                        w-[45px] h-[45px] rounded-full border border-[#FF4033] 
-                        text-[#FF4033] flex items-center justify-center 
-                        transition-all duration-200 cursor-pointer
-                        hover:bg-[#FF4033] hover:text-white hover:scale-110
+                      className=" w-[45px] h-[45px] rounded-full border border-[#FF4033]  text-[#FF4033] flex items-center justify-center  transition-all duration-200 cursor-pointer hover:bg-[#FF4033] hover:text-white hover:scale-110
                       "
                     >
                       <div className="w-10 h-10 flex items-center justify-center rounded-full">
@@ -224,14 +193,7 @@ export default function Allitems({ activeTab = "Break Fast" }) {
           <div className="flex reveal justify-center mt-10">
             <a
               href="/Menu"
-              className="
-                px-12 py-3 rounded-full 
-                bg-[#FF4033] text-white 
-                text-[16px] font-semibold 
-                transition duration-200
-                hover:bg-[#e6392d]
-                w-[168px] h-[56px]
-                flex items-center justify-center
+              className="  px-12 py-3 rounded-full   bg-[#FF4033] text-white  text-[16px] font-semibold  transition duration-200 hover:bg-[#e6392d]  w-[168px] h-[56px] flex items-center justify-center
               "
             >
               See More

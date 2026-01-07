@@ -12,23 +12,13 @@ export default function Contact() {
     <section className="w-full  bg-white py-16">
       <div className="bg-[#007A59] w-full  rounded-2xl">
         <div
-          className="
-            max-w-8xl mx-auto 
-            px-4 md:px-8 lg:px-16 
-            py-10
-            flex flex-col lg:flex-row 
-            gap-10
-          "
+          className=" max-w-8xl mx-auto  px-4 md:px-8 lg:px-16  py-10 flex flex-col lg:flex-row  gap-10"
         >
 
           {/* LEFT – FORM */}
           <div className="flex  reveal justify-center lg:justify-start w-full">
             <div
-              className="
-                bg-white rounded-2xl shadow-xl 
-                p-6 md:p-8 
-                w-full max-w-[560px]
-              "
+              className=" bg-white rounded-2xl shadow-xl  p-6 md:p-8  w-full max-w-[560px]"
             >
               <form className="flex flex-col gap-4">
 
@@ -51,25 +41,12 @@ export default function Contact() {
                   </label>
                   <textarea
                     rows="3"
-                    className="
-                      w-full mt-1 
-                      border rounded-md 
-                      px-3 py-2 
-                      outline-none 
-                      focus:ring-2 focus:ring-green-600 
-                      resize-none
-                    "
+                    className=" w-full mt-1  border rounded-md  px-3 py-2  outline-none  focus:ring-2 focus:ring-green-600  resize-none"
                   />
                 </div>
 
                 <button
-                  className="
-                    w-fit 
-                    bg-[#007a59] text-white 
-                    px-8 py-2 
-                    rounded-full 
-                    mt-4
-                  "
+                  className=" w-fit  bg-[#007a59] text-white  px-8 py-2  rounded-full  mt-4"
                 >
                   Book
                 </button>
@@ -85,11 +62,7 @@ export default function Contact() {
               <img
                 src={RedChilli3}
                 alt=""
-                className="
-                  hidden lg:block
-                  absolute
-                  w-[308px] h-auto
-                "
+                className=" hidden lg:block absolute w-[308px] h-auto"
               />
 
               <div className="space-y-6 mt-4 lg:mt-70">
@@ -126,13 +99,7 @@ export default function Contact() {
                       .map((icon, i) => (
                         <div
                           key={i}
-                          className="
-                            w-10 h-10 
-                            rounded-full 
-                            bg-white 
-                            text-[#007A59] 
-                            flex items-center justify-center
-                          "
+                          className=" w-10 h-10  rounded-full  bg-white  text-[#007A59]  flex items-center justify-center"
                         >
                           {icon}
                         </div>

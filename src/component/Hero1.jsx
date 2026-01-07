@@ -24,18 +24,13 @@ export default function Hero1() {
     <>
       <div className="w-full bg-white">
 
-        <div className="mx-auto px-4 md:px-8 lg:px-16 py-10
-                        flex flex-col md:flex-row items-center md:items-start 
-                        justify-between gap-10">
+        <div className="mx-auto px-4 md:px-8 lg:px-16 py-10 flex flex-col md:flex-row items-center md:items-start  justify-between gap-10">
           
 
           <section className="w-full md:w-[609px] md:h-[513px]">
             <div className="w-full h-full">
               <h1
-                className="text-[32px] sm:text-[40px] md:text-[60px] font-bold 
-                           leading-tight text-black 
-                           text-center md:text-left 
-                           slide-left opacity-0"
+                className="text-[32px] sm:text-[40px] md:text-[60px] font-bold  leading-tight text-black  text-center md:text-left  slide-left opacity-0"
                 style={{ animationDelay: "0s" }}
               >
                 The Power of Healthy Food{" "}
@@ -50,10 +45,7 @@ export default function Hero1() {
               </h1>
 
               <p
-                className="mt-4 text-[16px] md:text-[20px] text-black 
-                           max-w-[508px] mx-auto md:mx-0 
-                           text-center md:text-left 
-                           slide-left opacity-0"
+                className="mt-4 text-[16px] md:text-[20px] text-black  max-w-[508px] mx-auto md:mx-0  text-center md:text-left  slide-left opacity-0"
                 style={{ animationDelay: ".2s" }}
               >
                 A restaurant is an establishment that prepares and serves food
@@ -62,9 +54,7 @@ export default function Hero1() {
               </p>
 
               <div
-                className="flex mt-8 md:mt-10 gap-4 
-                           justify-center md:justify-start
-                           slide-left opacity-0"
+                className="flex mt-8 md:mt-10 gap-4  justify-center md:justify-start slide-left opacity-0"
                 style={{ animationDelay: ".4s" }}
               >
                 <NavLink to="/Menu"  className="transition-all duration-300 delay-200 hover:scale-110 hover:shadow-lg  w-[145px] h-[46px] bg-[#065B5E] flex items-center justify-center text-[#Ffff] rounded-full text-[18px] md:text-[22px] shadow-[#b3becc]">
