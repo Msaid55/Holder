@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Group48 from "../images/Group48.svg"; // نفس الخط الصغير اللي تحت العنوان
+import Group48 from "../images/Group48.svg";  
 import Rectangle from "../images/Rectangle.png";  
 import Rectangle1 from "../images/Rectangle1.svg";
 import Rectangle2 from "../images/Rectangle2.svg";
@@ -11,6 +11,7 @@ import Ellipse2 from "../images/Ellipse2.svg";
 import Ellipse3 from "../images/Ellipse3.svg";
 import Ellipse4 from "../images/Ellipse4.svg";
 import UseScrollReveal from "./UseScrollReveal";
+import { MdOutlineStar } from "react-icons/md";
 
 
 const data = [
@@ -145,7 +146,7 @@ export default function Customer() {
                     <div className="flex gap-1 mt-1">
                       {Array.from({ length: c.stars }).map((_, s) => (
                         <span key={s} className="text-yellow-400 text-base">
-                          ★
+                          <MdOutlineStar />
                         </span>
                       ))}
                     </div>
@@ -185,7 +186,7 @@ export default function Customer() {
                   <div className="flex gap-1 mt-1">
                     {Array.from({ length: c.stars }).map((_, s) => (
                       <span key={s} className="text-yellow-400 text-base">
-                        ★
+                        <MdOutlineStar />
                       </span>
                     ))}
                   </div>

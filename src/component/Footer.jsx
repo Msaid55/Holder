@@ -118,7 +118,7 @@ export default function Footer() {
 
           {/* الحقوق */}
           <p className="text-sm text-black">
-            © 202 Lift Media. All rights reserved.
+            © 2025 Lift Media. All rights reserved.
           </p>
 
           {/* السوشيال */}

@@ -1,9 +1,9 @@
-// صور الشيفات
 import Chaf1 from "../images/Chaf1.svg";
 import MaleChafe from "../images/MaleChafe.svg";
 import GirlChafe from "../images/GirlChafe.svg";
 import Group48 from "../images/Group48.svg";
 import UseScrollReveal from "./UseScrollReveal";
+import { MdOutlineStar } from "react-icons/md";
 
 export default function Ourchafe() {
   UseScrollReveal();
@@ -33,7 +33,7 @@ export default function Ourchafe() {
 
   return (
     <section className="w-full bg-white mt-12 h-auto">
-      {/* ✅ نفس الكونتينر بالظبط */}
+      {/* نفس الكونتينر بالظبط */}
       <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-16">
 
         {/* العنوان */}
@@ -104,7 +104,7 @@ export default function Ourchafe() {
                   <div className="flex gap-1 mb-2">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <span key={i} className="text-[#ffe100] text-[18px]">
-                        ★
+                        <MdOutlineStar />
                       </span>
                     ))}
                   </div>

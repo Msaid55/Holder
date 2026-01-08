@@ -29,6 +29,7 @@ import Desirt8 from "../images/Desirt8.svg";
 import UseScrollReveal from "./UseScrollReveal";
 import toast from "react-hot-toast";
 import { addToCart } from "./useCart";
+import { MdOutlineStar } from "react-icons/md";
 
 export default function Allitems({ activeTab = "Break Fast" }) {
   UseScrollReveal();
@@ -181,13 +182,13 @@ export default function Allitems({ activeTab = "Break Fast" }) {
                   <div className="flex gap-1 mt-1">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <span key={i} className="text-[#ffb400] text-[14px]">
-                        ★
+                        <MdOutlineStar />
                       </span>
                     ))}
                   </div>
 
                   <div className="flex items-center justify-between mt-5">
-                    {/* ✅ Order Now -> add only */}
+                    {/* Order Now -> add only */}
                     <button
                       onClick={() => handleOrderNow(item)}
                       className="
@@ -199,7 +200,7 @@ export default function Allitems({ activeTab = "Break Fast" }) {
                       Order Now
                     </button>
 
-                    {/* ✅ cart icon -> cart page */}
+                    {/* cart icon -> cart page */}
                     <Link
                       to="/cart"
                       className="

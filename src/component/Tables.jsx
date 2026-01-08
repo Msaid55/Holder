@@ -1,11 +1,6 @@
 import { useMemo, useState } from "react";
 import UseScrollReveal from "./UseScrollReveal";
-/**
- * statuses:
- * available        -> green
- * reserved         -> red
- * soon             -> orange
- */
+ 
 const STATUS = {
   available: {
     label: "Available",
@@ -112,7 +107,7 @@ export default function Tables() {
   const [mode, setMode] = useState("all"); // all | reservation
   const [selectedId, setSelectedId] = useState(null);
 
-  // ✅ NEW: tables state (بدل ما TABLES ثابتة)
+  // NEW: tables state (بدل ما TABLES ثابتة)
   const [tables, setTables] = useState(TABLES);
 
   const selected = useMemo(
@@ -120,7 +115,7 @@ export default function Tables() {
     [tables, selectedId]
   );
 
-  // ✅ NEW: Book allowed only if selected exists and not reserved
+  // NEW: Book allowed only if selected exists and not reserved
   const canBook = !!selected && selected.status !== "reserved";
   const canCancel = !!selected && selected.status === "reserved";
 
@@ -160,7 +155,7 @@ export default function Tables() {
 
   const onSelect = (t) => setSelectedId(t.id);
 
-  // ✅ NEW: Book / Cancel handlers
+  // NEW: Book / Cancel handlers
   const handleBook = () => {
     if (!selected) return;
 
@@ -274,7 +269,7 @@ export default function Tables() {
                   ))}
                 </div>
 
-                {/* ✅ Book */}
+                {/* Book */}
                 <button
                   className={[
                     "mt-6 w-full h-[46px] rounded-full font-bold text-white transition",
@@ -288,7 +283,7 @@ export default function Tables() {
                   Book
                 </button>
 
-                {/* ✅ Cancel (يظهر بس لو reserved) */}
+                {/* Cancel (يظهر بس لو reserved) */}
                 {canCancel && (
                   <button
                     className="

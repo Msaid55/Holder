@@ -4,6 +4,7 @@ import { FiShoppingBag } from "react-icons/fi";
 import { ITEM_DETAILS } from "./ItemDetailsData";
 import toast from "react-hot-toast";
 import { addToCart } from "./useCart";
+import { MdOutlineStar } from "react-icons/md";
 
 export default function ItemsCounter() {
   const location = useLocation();
@@ -40,7 +41,7 @@ export default function ItemsCounter() {
   );
 
   const handleAdd = () => {
-    addToCart(selectedItem, count); // ✅ add + dispatch event inside useCart
+    addToCart(selectedItem, count); // add + dispatch event inside useCart
     toast.success(`${selectedItem.title} added to cart 🛒`);
 
     setAddedAnim(true);
@@ -126,7 +127,7 @@ export default function ItemsCounter() {
               <div className="flex justify-end gap-1 mt-2">
                 {Array.from({ length: details.rating || 5 }).map((_, i) => (
                   <span key={i} className="text-[#ffb400] text-[16px]">
-                    ★
+                    <MdOutlineStar />
                   </span>
                 ))}
               </div>
@@ -135,7 +136,7 @@ export default function ItemsCounter() {
 
           {/* Buttons */}
           <div className="flex items-center gap-4 mt-8">
-            {/* ✅ Order Now */}
+            {/* Order Now */}
             <button
               onClick={handleAdd}
               className={[
@@ -146,7 +147,7 @@ export default function ItemsCounter() {
               Order Now
             </button>
 
-            {/* ✅ Add to Cart */}
+            {/* Add to Cart */}
             <button
               onClick={handleAdd}
               className="px-10 py-3 rounded-full border border-[#FF4033] text-[#FF4033] font-semibold hover:bg-[#FF4033] hover:text-white transition flex items-center gap-2"
