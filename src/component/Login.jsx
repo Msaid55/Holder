@@ -21,7 +21,7 @@ export default function Login() {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    // ✅ هنا هتربطي بباك اند بعدين
+    // هنا هنربط بباك اند بعدين
     // دلوقتي بس هنمشي المستخدم للهوم
     navigate("/");
   };

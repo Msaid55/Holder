@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { FiChevronDown, FiImage, FiStar } from "react-icons/fi";
 import toast from "react-hot-toast";
+import { MdOutlineStar } from "react-icons/md";
 
 const LS_KEY = "product_reviews_v1";
 
@@ -23,7 +24,7 @@ function Stars({ value = 0 }) {
     <div className="flex gap-1">
       {Array.from({ length: 5 }).map((_, i) => (
         <span key={i} className={i < value ? "text-[#ffb400]" : "text-gray-300"}>
-          ★
+          <MdOutlineStar />
         </span>
       ))}
     </div>
@@ -81,14 +82,14 @@ export default function ProductReviews({ productId, productName }) {
   const [images, setImages] = useState([]);
   const fileRef = useRef(null);
 
-  // ✅ load reviews for this product
+  // load reviews for this product
   useEffect(() => {
     const all = loadAll();
     const list = all[productId] || [];
     setReviews(Array.isArray(list) ? list : []);
   }, [productId]);
 
-  // ✅ save reviews for this product
+  // save reviews for this product
   useEffect(() => {
     const all = loadAll();
     all[productId] = reviews;
@@ -217,7 +218,7 @@ export default function ProductReviews({ productId, productName }) {
                 return (
                   <div key={s} className="flex items-center gap-3">
                     <div className="w-8 text-sm font-semibold text-black">{s}</div>
-                    <div className="text-[#ffb400] -mt-[2px]">★</div>
+                    <div className="text-[#ffb400] -mt-[2px]"><MdOutlineStar /></div>
 
                     <div className="flex-1 h-[8px] rounded-full bg-gray-100 overflow-hidden">
                       <div

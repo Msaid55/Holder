@@ -33,7 +33,7 @@ export default function Register() {
       return;
     }
 
-    // ✅ هنا هتربطي باك اند بعدين
+    //  هنا هتربطي باك اند بعدين
     // دلوقتي هنوديه لصفحة اللوجين
     navigate("/login");
   };

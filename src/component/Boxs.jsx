@@ -12,11 +12,11 @@ export default function Boxs() {
       (entries) => {
         if (entries[0].isIntersecting) {
           setVisible(true);
-          observer.disconnect(); // يحصل مرة واحدة بس
+          observer.disconnect();  
         }
       },
       {
-        threshold: 0.2, // لما 20% من السيكشن يدخل الشاشة
+        threshold: 0.2,  
       }
     );
 

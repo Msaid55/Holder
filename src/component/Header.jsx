@@ -34,7 +34,7 @@ export default function Header() {
   const mobileLinkClass = () =>
     "w-full px-4 py-3 text-gray-800 hover:bg-gray-50 rounded-lg";
 
-  // ✅ Sticky on scroll
+  // Sticky on scroll
   useEffect(() => {
     const onScroll = () => {
       setIsSticky(window.scrollY > 60);
@@ -46,7 +46,7 @@ export default function Header() {
 
   return (
     <>
-      {/* ✅ HEADER WRAPPER */}
+      {/* HEADER WRAPPER */}
       <header
         className={[
           "w-full transition-all duration-300",
@@ -77,7 +77,7 @@ export default function Header() {
               <FiSearch size={20} />
             </div>
 
-            {/* ✅ Cart with badge (Desktop) */}
+            {/* Cart with badge (Desktop) */}
             <Link
               to="/cart"
               className="relative w-10 h-10 flex items-center justify-center hover:scale-110 transition rounded-full bg-emerald-700 text-white cursor-pointer"
@@ -93,7 +93,7 @@ export default function Header() {
             <UserMenu />
           </div>
 
-          {/* ✅ Mobile Icons */}
+          {/* Mobile Icons */}
           <div className="md:hidden flex items-center gap-3">
             <div className="w-10 h-10 flex items-center justify-center hover:scale-110 transition rounded-full bg-emerald-700 text-white">
               <FiSearch size={20} />
@@ -113,7 +113,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* ✅ Mobile dropdown row */}
+        {/* Mobile dropdown row */}
         <div className="md:hidden px-4 pb-3 flex items-center gap-3">
           <button
             onClick={() => setMobileMenuOpen((prev) => !prev)}
@@ -127,7 +127,7 @@ export default function Header() {
           <UserMenu />
         </div>
 
-        {/* ✅ Mobile Dropdown Menu */}
+        {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden px-4 pb-4 relative z-50">
             <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden">
@@ -150,7 +150,7 @@ export default function Header() {
         )}
       </header>
 
-      {/* ✅ Spacer علشان لما يبقى fixed ما يغطيش المحتوى */}
+      {/* Spacer علشان لما يبقى fixed ما يغطيش المحتوى */}
       {isSticky && <div className="h-[120px]" />}
     </>
   );
