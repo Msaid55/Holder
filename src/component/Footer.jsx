@@ -48,7 +48,7 @@ export default function Footer() {
                     <label className="text-sm font-medium text-black md:text-white">First Name*</label>
                     <input
                       type="text"
-                      className="w-full mt-1 border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600"
+                      className="w-full mt-1 text-[#FFB020] border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600"
                     />
                   </div>
 

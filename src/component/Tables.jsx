@@ -188,7 +188,7 @@ export default function Tables() {
         <div className="rounded-2xl h-full bg-[#fbf3e6] p-5 md:p-7">
           <div className="flex flex-col lg:flex-row items-start gap-6 w-full">
             {/* LEFT - Floor Plan */}
-            <div className="w-full reveal">
+            <div className="hidden md:block w-full reveal">
               {/* top controls */}
               <div className="flex items-center gap-3 mb-4">
                 <div className="inline-flex bg-white rounded-full p-1 shadow-sm">
