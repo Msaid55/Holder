@@ -1,4 +1,4 @@
-import Chaf1 from "../images/chaf1.svg";
+import Chaf1 from "../images/Chaf1.svg";
 import MaleChafe from "../images/MaleChafe.svg";
 import GirlChafe from "../images/GirlChafe.svg";
 
