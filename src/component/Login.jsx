@@ -66,7 +66,7 @@ export default function Login() {
 
           {/* Right side (Form) */}
           <div className="w-full reveal">
-            <div className="w-full max-w-[520px] mx-auto bg-white rounded-3xl shadow-[0_14px_40px_rgba(0,0,0,0.06)] border border-black/5 p-7 sm:p-10">
+            <div className="w-full text-black max-w-[520px] mx-auto bg-white rounded-3xl shadow-[0_14px_40px_rgba(0,0,0,0.06)] border border-black/5 p-7 sm:p-10">
               <div className="flex flex-col items-center text-center">
                 <h1 className="text-[28px] sm:text-[32px] font-extrabold text-[#007a59]">
                   Login
