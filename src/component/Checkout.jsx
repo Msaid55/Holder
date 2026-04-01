@@ -71,9 +71,9 @@ export default function Checkout() {
             <div className="w-full lg:flex-1">
               <h2 className="text-[28px] font-bold text-black mb-6">Checkout</h2>
 
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+              <div className="bg-white rounded-2xl text-black border border-gray-100 shadow-sm p-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Field label="Full Name" name="fullName" value={form.fullName} onChange={onChange} />
+                  <Field label="Full Name"  name="fullName" value={form.fullName} onChange={onChange} />
                   <Field label="Phone" name="phone" value={form.phone} onChange={onChange} />
                   <Field label="Email (optional)" name="email" value={form.email} onChange={onChange} />
                   <Field label="City" name="city" value={form.city} onChange={onChange} />

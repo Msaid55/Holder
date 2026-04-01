@@ -45,53 +45,53 @@ export default function Footer() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm font-medium text-black md:text-white">First Name*</label>
+                    <label className="text-sm font-medium text-black  md:text-white">First Name<span className="text-red-700">*</span></label>
                     <input
                       type="text"
-                      className="w-full mt-1 text-[#FFB020] border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600"
+                      className="w-full mt-1 lg:text-white text-black border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600"
                     />
                   </div>
 
                   <div>
-                    <label className="text-sm font-medium text-black">Last Name*</label>
+                    <label className="text-sm font-medium text-black">Last Name<span className="text-red-700">*</span></label>
                     <input
                       type="text"
-                      className="w-full mt-1 border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600"
+                      className="w-full mt-1 border text-black rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm font-medium text-black md:text-white">Email*</label>
+                    <label className="text-sm font-medium text-black md:text-white">Email<span className="text-red-700">*</span></label>
                     <input
                       type="email"
-                      className="w-full mt-1 border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600"
+                      className="w-full mt-1 border lg:text-white text-black rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600"
                     />
                   </div>
 
                   <div>
-                    <label className="text-sm font-medium text-black">Phone number*</label>
+                    <label className="text-sm font-medium text-black">Phone number<span className="text-red-700">*</span></label>
                     <input
                       type="tel"
-                      className="w-full mt-1 border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600"
+                      className="w-full mt-1 border text-black rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-black md:text-white">Subject</label>
+                  <label className="text-sm font-medium text-black md:text-white">Subject<span className="text-red-700">*</span></label>
                   <input
                     type="text"
-                    className="w-full mt-1 border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600"
+                    className="w-full mt-1 border lg:text-white text-black rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600"
                   />
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-black md:text-white">Message*</label>
+                  <label className="text-sm font-medium text-black md:text-white">Message<span className="text-red-700">*</span></label>
                   <textarea
                     rows="4"
-                    className="w-full mt-1 border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600 resize-none"
+                    className="w-full mt-1 border lg:text-white text-black rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-green-600 resize-none"
                   ></textarea>
                 </div>
 

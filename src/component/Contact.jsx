@@ -27,6 +27,7 @@ export default function Contact() {
               className="
                 bg-white rounded-2xl shadow-xl 
                 p-6 md:p-8 
+                text-black
                 w-full max-w-[560px]
               "
             >

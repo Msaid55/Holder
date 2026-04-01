@@ -91,7 +91,7 @@ export default function UserMenu() {
               transition
             "
           >
-            Sign up
+            Register
           </Link>
         </div>
       )}
