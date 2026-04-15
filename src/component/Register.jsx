@@ -1,7 +1,9 @@
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FiUser, FiMail, FiLock, FiEye, FiEyeOff } from "react-icons/fi";
 import UseScrollReveal from "./UseScrollReveal";
+import { registerUser } from "../api/api";
 export default function Register() {
   UseScrollReveal();
   const navigate = useNavigate();
