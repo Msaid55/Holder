@@ -18,7 +18,7 @@ import ChatBot from "./component/ChatBot";
 import Checkout from "./component/Checkout";
 
 export default function App() {
-
+  console.log(import.meta.env.VITE_STRAPI_URL);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

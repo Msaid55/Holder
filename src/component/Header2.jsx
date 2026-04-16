@@ -2,7 +2,7 @@ import { FiChevronDown } from "react-icons/fi";
 import { useState } from "react";
 
 export default function Header2({ active, setActive }) {
-  const tabs = ["Break Fast", "Lunch", "Dinner", "Pizza", "Burger", "Drinks", "Desert"];
+  const tabs = ["Breakfast", "Lunch", "Dinner", "Pizza", "Burger", "Drinks", "Desert"];
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
