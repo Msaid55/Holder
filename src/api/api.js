@@ -1,42 +1,41 @@
-const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || "http://localhost:1337";
-
-// helper
-async function request(path) {
-  const res = await fetch(`${STRAPI_URL}${path}`);
-  if (!res.ok) throw new Error("Failed to fetch: " + path);
-  return res.json();
-}
-
-export async function getProducts(params = "") {
-  return request(`/api/products?populate=*&${params}`.replace("?populate=*&", "?populate=*"));
-}
-
-export async function getCategories() {
-  return request(`/api/categories?populate=*`);
-}
-
-export async function registerUser(userData) {
-  const res = await fetch("http://localhost:1337/api/auth/local/register", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(userData),
-  });
+// Register User
+export const registerUser = async (userData) => {
+  const res = await fetch(
+    `${import.meta.env.VITE_STRAPI_URL}/api/auth/local/register`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: userData.fullName,
+        email: userData.email,
+        password: userData.password,
+      }),
+    }
+  );
 
   const data = await res.json();
-  return data;
-}
 
-export async function loginUser(userData) {
-  const res = await fetch("http://localhost:1337/api/auth/local", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(userData),
-  });
+  if (!res.ok) {
+    throw new Error(data?.error?.message || "Registration failed");
+  }
+
+  return data;
+};
+
+
+// Get Categories (FIX for your error)
+export const getCategories = async () => {
+  const res = await fetch(
+    `${import.meta.env.VITE_STRAPI_URL}/api/categories?populate=*`
+  );
 
   const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch categories");
+  }
+
   return data;
-}
+};

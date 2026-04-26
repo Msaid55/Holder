@@ -1,111 +1,86 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { FiShoppingBag } from "react-icons/fi";
 import { NavLink, Link } from "react-router-dom";
 import UseScrollReveal from "./UseScrollReveal";
 import toast from "react-hot-toast";
 import { addToCart } from "./useCart";
 import { MdOutlineStar } from "react-icons/md";
-import { getCategories } from "../api/api";
 
 export default function Allitems({ activeTab = "Breakfast" }) {
   UseScrollReveal();
 
-  const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || "http://localhost:1337";
+  const STRAPI_URL =
+    import.meta.env.VITE_STRAPI_URL || "http://localhost:1337";
 
-  const [categories, setCategories] = useState([]);
+  const cacheRef = useRef({});
+
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
-  const normalize = (s) => (s || "").toLowerCase().replace(/\s+/g, "");
+  const normalize = (s) =>
+    (s || "").toString().toLowerCase().replace(/\s+/g, "").trim();
 
-  // تحميل الكاتيجوريز
   useEffect(() => {
     let mounted = true;
 
-    (async () => {
-      try {
-        const res = await getCategories();
-        if (!mounted) return;
-        setCategories(res?.data || []);
-      } catch (e) {
-        console.log("getCategories error:", e);
-        if (!mounted) return;
-        setCategories([]);
+    const loadProductsByCategory = async () => {
+      const cacheKey = normalize(activeTab);
+
+      if (cacheRef.current[cacheKey]) {
+        setItems(cacheRef.current[cacheKey]);
+        return;
       }
-    })();
-
-    return () => {
-      mounted = false;
-    };
-  }, []);
-
-  // تحميل المنتجات حسب الكاتيجوري
-  useEffect(() => {
-    let mounted = true;
-
-    (async () => {
-      setLoading(true);
 
       try {
-        if (!categories.length) {
-          if (mounted) setItems([]);
-          setLoading(false);
-          return;
+        setLoading(true);
+
+        const url =
+          `${STRAPI_URL}/api/products` +
+          `?filters[category][title][$eq]=${encodeURIComponent(activeTab)}` +
+          `&populate=*` +
+          `&pagination[pageSize]=8`;
+
+        const res = await fetch(url);
+
+        if (!res.ok) {
+          throw new Error(`Products fetch failed: ${res.status}`);
         }
-
-        const matchedCategory = categories.find((c) => {
-          return normalize(c?.name) === normalize(activeTab);
-        });
-
-        console.log("activeTab:", activeTab);
-        console.log("categories:", categories);
-        console.log("matchedCategory:", matchedCategory);
-
-        if (!matchedCategory) {
-          if (mounted) setItems([]);
-          setLoading(false);
-          return;
-        }
-
-        const res = await fetch(
-          `${STRAPI_URL}/api/products?populate=*&filters[category][id][$eq]=${matchedCategory.id}`
-        );
-
-        if (!res.ok) throw new Error("Failed products fetch");
 
         const json = await res.json();
         const products = json?.data || [];
 
-        console.log("products:", products);
+        const mapped = products.map((product) => ({
+          id: product.id,
+          title: product.title || "Untitled",
+          price: product.price != null ? `$${product.price}` : "$0",
+          img: product?.image?.url || "",
+          category: product?.category?.title || activeTab,
+          _raw: product,
+        }));
 
-        const mapped = products.map((p) => {
-          const imgUrl = p?.image?.url ? `${STRAPI_URL}${p.image.url}` : "";
+        cacheRef.current[cacheKey] = mapped;
 
-          return {
-            id: p.id,
-            title: p.title || "Untitled",
-            price: p.price != null ? `$${p.price}` : "$0",
-            img: imgUrl,
-            category: matchedCategory?.name || activeTab,
-            _raw: p,
-          };
-        });
-
-        if (!mounted) return;
-        setItems(mapped);
-      } catch (e) {
-        console.log("products error:", e);
-        if (!mounted) return;
-        setItems([]);
+        if (mounted) {
+          setItems(mapped);
+        }
+      } catch (error) {
+        console.log("products error:", error);
+        if (mounted) {
+          setItems([]);
+        }
       } finally {
-        if (mounted) setLoading(false);
+        if (mounted) {
+          setLoading(false);
+        }
       }
-    })();
+    };
+
+    loadProductsByCategory();
 
     return () => {
       mounted = false;
     };
-  }, [activeTab, categories]);
+  }, [activeTab, STRAPI_URL]);
 
   const filteredItems = useMemo(() => items.slice(0, 8), [items]);
 
@@ -149,15 +124,33 @@ export default function Allitems({ activeTab = "Breakfast" }) {
                 state={{ item, items: filteredItems }}
                 className="relative z-20 flex justify-center"
               >
-                <img
-                  src={item.img}
-                  alt={item.title}
+                {item.img ? (
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                      const fallback = e.currentTarget.nextElementSibling;
+                      if (fallback) fallback.style.display = "flex";
+                    }}
+                    className="
+                      w-[212px] h-[213px] object-contain mt-[-40px]
+                      transition-all duration-300
+                      group-hover:-translate-y-2
+                    "
+                  />
+                ) : null}
+
+                <div
+                  style={{ display: item.img ? "none" : "flex" }}
                   className="
-                    w-[212px] h-[213px] object-contain mt-[-40px]
-                    transition-all duration-300
-                    group-hover:-translate-y-2
+                    w-[212px] h-[213px] mt-[-40px]
+                    items-center justify-center text-gray-400
                   "
-                />
+                >
+                  No Image
+                </div>
               </NavLink>
 
               <div className="relative z-30 mt-14">
@@ -165,6 +158,7 @@ export default function Allitems({ activeTab = "Breakfast" }) {
                   <h3 className="text-[20px] font-bold text-[#111]">
                     {item.title}
                   </h3>
+
                   <div className="text-[18px] font-extrabold text-[#111]">
                     {item.price}
                   </div>
@@ -199,9 +193,7 @@ export default function Allitems({ activeTab = "Breakfast" }) {
                       hover:bg-[#FF4033] hover:text-white hover:scale-110
                     "
                   >
-                    <div className="w-10 h-10 flex items-center justify-center rounded-full">
-                      <FiShoppingBag size={24} />
-                    </div>
+                    <FiShoppingBag size={24} />
                   </Link>
                 </div>
               </div>
@@ -215,23 +207,6 @@ export default function Allitems({ activeTab = "Breakfast" }) {
           )}
         </div>
       )}
-
-      <div className="flex reveal justify-center mt-10">
-        <Link
-          to="/menu"
-          className="
-            px-12 py-3 rounded-full
-            bg-[#FF4033] text-white
-            text-[16px] font-semibold
-            transition duration-200
-            hover:bg-[#e6392d]
-            w-[168px] h-[56px]
-            flex items-center justify-center
-          "
-        >
-          See More
-        </Link>
-      </div>
     </div>
   );
 }
