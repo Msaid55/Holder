@@ -4,12 +4,11 @@ import Header2 from "./Header2";
 import Allitems from "./Allitems";
 
 export default function HeadItem() {
-  const [activeTab, setActiveTab] = useState("Break Fast");
+  const [activeTab, setActiveTab] = useState("Breakfast");
 
   return (
     <div className="w-full bg-white">
       <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16">
-
         <div className="flex justify-center">
           <div className="flex flex-col items-center gap-1">
             <h1 className="text-[#007a59] text-[28px] font-bold">

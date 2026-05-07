@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FiMail, FiLock, FiEye, FiEyeOff } from "react-icons/fi";
 import UseScrollReveal from "./UseScrollReveal";
+import { loginUser } from "../api/api";
 export default function Login() {
   UseScrollReveal();
   const navigate = useNavigate();
@@ -18,13 +19,17 @@ export default function Login() {
     setForm((p) => ({ ...p, [name]: type === "checkbox" ? checked : value }));
   };
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+ const onSubmit = async (e) => {
+  e.preventDefault();
 
-    // هنا هنربط بباك اند بعدين
-    // دلوقتي بس هنمشي المستخدم للهوم
+  try {
+    await loginUser(form);
+    alert("Login successful!");
     navigate("/");
-  };
+  } catch (err) {
+    alert(err.message);
+  }
+};
 
   return (
     <div className="min-h-screen bg-white">
