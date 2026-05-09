@@ -1,31 +1,33 @@
 import { useEffect, useMemo, useState } from "react";
 import UseScrollReveal from "./UseScrollReveal";
-import { createBooking, getBookings } from "../api/api";
+import { getBookings } from "../api/api";
 
 const TABLES = [
   { id: "T-1", status: "available", x: 7, y: 14, wPct: 10, hPct: 9 },
   { id: "T-2", status: "available", x: 26, y: 14, wPct: 22, hPct: 11 },
   { id: "T-3", status: "reserved", x: 55, y: 14, wPct: 30, hPct: 11 },
   { id: "T-4", status: "available", x: 78, y: 14, wPct: 10, hPct: 9 },
+
   { id: "T-5", status: "available", x: 20, y: 36, wPct: 26, hPct: 11 },
   { id: "T-6", status: "available", x: 52, y: 36, wPct: 30, hPct: 11 },
   { id: "T-7", status: "reserved", x: 76, y: 36, wPct: 10, hPct: 9 },
+
   { id: "T-8", status: "available", x: 14, y: 53, wPct: 16, hPct: 10 },
   { id: "T-9", status: "reserved", x: 30, y: 53, wPct: 10, hPct: 10 },
   { id: "T-10", status: "soon", x: 44, y: 53, wPct: 10, hPct: 10 },
   { id: "T-11", status: "available", x: 67, y: 53, wPct: 26, hPct: 11 },
+
   { id: "T-12", status: "available", x: 10, y: 70, wPct: 10, hPct: 10 },
   { id: "T-13", status: "reserved", x: 26, y: 70, wPct: 10, hPct: 10 },
   { id: "T-14", status: "reserved", x: 55, y: 70, wPct: 30, hPct: 11 },
   { id: "T-15", status: "available", x: 78, y: 70, wPct: 10, hPct: 10 },
+
   { id: "T-16", status: "available", x: 10, y: 87, wPct: 10, hPct: 10 },
   { id: "T-17", status: "reserved", x: 40, y: 87, wPct: 26, hPct: 11 },
   { id: "T-18", status: "available", x: 72, y: 87, wPct: 30, hPct: 11 },
 ];
 
 function FloorTable({ t, selected, onSelect }) {
-  UseScrollReveal();
-
   const ring =
     t.status === "available"
       ? "ring-emerald-500"
@@ -85,11 +87,11 @@ function FloorTable({ t, selected, onSelect }) {
   );
 }
 
-export default function Tables() {
+export default function Tables({ selectedId, setSelectedId }) {
+  UseScrollReveal();
+
   const [mode, setMode] = useState("all");
-  const [selectedId, setSelectedId] = useState(null);
   const [tables, setTables] = useState(TABLES);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function loadBookings() {
@@ -118,9 +120,6 @@ export default function Tables() {
     () => tables.find((t) => t.id === selectedId) || null,
     [tables, selectedId]
   );
-
-  const canBook = !!selected && selected.status !== "reserved";
-  const canCancel = !!selected && selected.status === "reserved";
 
   const listTables = useMemo(() => {
     if (mode === "reservation") {
@@ -158,53 +157,33 @@ export default function Tables() {
   };
 
   const onSelect = (t) => {
+    if (t.status === "reserved") {
+      alert(`Table ${t.id} is already reserved`);
+      return;
+    }
+
     setSelectedId(t.id);
+
+    window.dispatchEvent(
+      new CustomEvent("table_selected", {
+        detail: t.id,
+      })
+    );
   };
 
-  const handleBook = async () => {
-    if (!selected) return;
-
-    if (selected.status === "reserved") return;
-
-    const user = JSON.parse(localStorage.getItem("user") || "null");
-
-    try {
-      setLoading(true);
-
-      await createBooking({
-        fullName: user?.username || "Guest",
-        Phone: "",
-        Time: new Date().toLocaleTimeString(),
-        Date: new Date().toISOString(),
-        PeopleCount: 1,
-        Message: `Booking table ${selected.id}`,
-        bookingStatus: "pending",
-        tableId: selected.id,
-      });
-
-      setTables((prev) =>
-        prev.map((t) =>
-          t.id === selected.id ? { ...t, status: "reserved" } : t
-        )
-      );
-
-      alert("Booking request sent successfully!");
-    } catch (err) {
-      alert(err.message);
-    } finally {
-      setLoading(false);
+  const handleBook = () => {
+    if (!selected) {
+      alert("Choose a table first");
+      return;
     }
+
+    alert(`Table ${selected.id} selected. Now fill the booking form.`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleCancel = () => {
     if (!selected) return;
-    if (selected.status !== "reserved") return;
-
-    setTables((prev) =>
-      prev.map((t) =>
-        t.id === selected.id ? { ...t, status: "available" } : t
-      )
-    );
+    setSelectedId(null);
   };
 
   return (
@@ -295,17 +274,17 @@ export default function Tables() {
                 <button
                   className={[
                     "mt-6 w-full h-[46px] rounded-full font-bold text-white transition",
-                    canBook && !loading
+                    selected
                       ? "bg-emerald-700 hover:bg-emerald-800"
                       : "bg-emerald-700/60 cursor-not-allowed",
                   ].join(" ")}
-                  disabled={!canBook || loading}
+                  disabled={!selected}
                   onClick={handleBook}
                 >
-                  {loading ? "Booking..." : "Book"}
+                  Select Table
                 </button>
 
-                {canCancel && (
+                {selected && (
                   <button
                     className="
                       mt-3 w-full h-[46px] rounded-full font-bold
@@ -313,15 +292,13 @@ export default function Tables() {
                     "
                     onClick={handleCancel}
                   >
-                    Cancel Booking
+                    Cancel Selection
                   </button>
                 )}
 
                 <p className="mt-3 text-center text-xs text-gray-500">
                   {selected
-                    ? selected.status === "reserved"
-                      ? `Table ${selected.id} is reserved`
-                      : `You chose ${selected.id}`
+                    ? `You chose ${selected.id}`
                     : "Choose a table to book"}
                 </p>
               </div>
