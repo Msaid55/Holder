@@ -88,3 +88,38 @@ export const getProductsByCategory = async (categoryId) => {
 
   return data.data || [];
 };
+// Booking Handeling
+export const createBooking = async (bookingData) => {
+  const jwt = localStorage.getItem("jwt");
+
+  const res = await fetch(`${import.meta.env.VITE_STRAPI_URL}/api/bookings`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      ...(jwt ? { Authorization: `Bearer ${jwt}` } : {}),
+    },
+    body: JSON.stringify({
+      data: bookingData,
+    }),
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data?.error?.message || "Failed to create booking");
+  }
+
+  return data.data;
+};
+
+export const getBookings = async () => {
+  const res = await fetch(`${import.meta.env.VITE_STRAPI_URL}/api/bookings`);
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data?.error?.message || "Failed to fetch bookings");
+  }
+
+  return data.data || [];
+};
